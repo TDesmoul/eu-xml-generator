@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ECigProductFile>
+    <applicationVersion>1.2.3</applicationVersion>
+    <uuid>6340b5f0-b116-48b9-946c-afe4f94ca19a</uuid>
+    <ecigProductSubmission>
+        <Submitter confidential="true" submitterID="00088">
+            <SubmitterType>IMPORTER</SubmitterType>
+            <HasParent>false</HasParent>
+            <Parent confidential="false"/>
+            <HasAffiliates>true</HasAffiliates>
+            <Affiliates>
+                <Affiliate confidential="false">
+                    <Name>Polyflame (Shanghai) Trading Co. Ltd.</Name>
+                    <Address>2669 Xie Tu Road Xuhui District, Shanghai</Address>
+                    <Country>CN</Country>
+                    <PhoneNumber>00862131336020</PhoneNumber>
+                    <Email>pa.paulicevich@cn.polyflame.com</Email>
+                </Affiliate>
+            </Affiliates>
+            <HasEnterer>false</HasEnterer>
+            <Enterer confidential="false"/>
+        </Submitter>
+        <SubmissionType confidential="true">1</SubmissionType>
+        <GeneralComment confidential="false"/>
+        <Product>
+            <ProductID confidential="true"/>
+            <PreviousProductID confidential="false"/>
+            <OtherProductsExist confidential="false">false</OtherProductsExist>
+            <OtherProducts>
+                <ProductIdentification confidential="false"/>
+            </OtherProducts>
+            <SameCompositionProductsExist confidential="false">false</SameCompositionProductsExist>
+            <SameCompositionProducts>
+                <ProductIdentification confidential="false"/>
+            </SameCompositionProducts>
+            <Manufacturers>
+                <Manufacturer confidential="true">
+                    <Name>Lab rome</Name>
+                    <Address>10 Rue Enrico Fermi, 77400 Saint THIBAULT DES VIGNES, FRANCE</Address>
+                    <Country>FR</Country>
+                    <PhoneNumber>+33143906000</PhoneNumber>
+                    <Email>jonathan.creange@polyflame.com</Email>
+                    <ProductionSiteAddresses>
+                        <ProductionSiteAddress confidential="true">
+                            <Address>10 Rue Enrico Fermi, 77400 Saint THIBAULT DES VIGNES, FRANCE</Address>
+                            <Country>FR</Country>
+                            <PhoneNumber>+33143906000</PhoneNumber>
+                            <Email>jonathan.creange@polyflame.com</Email>
+                        </ProductionSiteAddress>
+                    </ProductionSiteAddresses>
+                </Manufacturer>
+            </Manufacturers>
+            <MarketResearchFiles>
+                <Attachment/>
+            </MarketResearchFiles>
+            <ProductType confidential="true">7</ProductType>
+            <Weight confidential="true"/>
+            <Volume confidential="true"/>
+            <ClpClassification confidential="false"/>
+            <StudySummaryFiles>
+                <Attachment/>
+            </StudySummaryFiles>
+            <Presentations>
+                <Presentation>
+                    <NationalMarket confidential="true">DE</NationalMarket>
+                    <NationalComment confidential="true">DRAGON MELON: 12MG</NationalComment>
+                    <BrandName confidential="true">SilverCig, Max</BrandName>
+                    <BrandSubtypeNameExists confidential="true">false</BrandSubtypeNameExists>
+                    <BrandSubtypeName confidential="false"/>
+                    <LaunchDate confidential="true">2019-03-19+01:00</LaunchDate>
+                    <WithdrawalIndication confidential="false">false</WithdrawalIndication>
+                    <WithdrawalDate confidential="false"/>
+                    <ProductNumberType confidential="true">SUBMITTER</ProductNumberType>
+                    <ProductNumber confidential="true">WAIKIKI-12MG</ProductNumber>
+                    <PackageUnits confidential="true">1</PackageUnits>
+                    <UnitPacketPictureFile/>
+                    <AnnualSalesDataList>
+                        <AnnualSalesData>
+                            <Year confidential="true">2018+02:00</Year>
+                            <SalesVolume confidential="true">0.0</SalesVolume>
+                            <SalesMode/>
+                        </AnnualSalesData>
+                    </AnnualSalesDataList>
+                </Presentation>
+            </Presentations>
+            <Ingredients><Ingredient>Test2</Ingredient></Ingredients>
+            <Emissions/>
+            <Design>
+                <Description confidential="true">DRAGON MELON: 12MG, 10mL refilling bottle</Description>
+                <IdentificationEcigDevice confidential="false"/>
+                <LiquidVolumeCapacity confidential="true">10.0</LiquidVolumeCapacity>
+                <NicotineConcentration confidential="true">12.0</NicotineConcentration>
+                <BatteryType confidential="false"/>
+                <BatteryCapacity confidential="false">-1.0</BatteryCapacity>
+                <VoltageWattageAdjustable confidential="true">4</VoltageWattageAdjustable>
+                <Voltage confidential="false">-1.0</Voltage>
+                <VoltageLowerRange confidential="false">-1.0</VoltageLowerRange>
+                <VoltageUpperRange confidential="false">-1.0</VoltageUpperRange>
+                <Wattage confidential="false">-1.0</Wattage>
+                <WattageLowerRange confidential="false">-1.0</WattageLowerRange>
+                <WattageUpperRange confidential="false">-1.0</WattageUpperRange>
+                <AirflowAdjustable confidential="false">false</AirflowAdjustable>
+                <WickChangeable confidential="false">false</WickChangeable>
+                <Microprocessor confidential="false">false</Microprocessor>
+                <CoilComposition confidential="false"/>
+                <NicotineDoseUptakeFile attachmentID="1f66f2e1-4c4a-4b9e-bd44-77735500f11c"/>
+                <ProductionFile attachmentID="dbfc6273-ea87-42c5-9fa4-e35802cc9a4a"/>
+                <ProductionConformity confidential="true">true</ProductionConformity>
+                <QualitySafety confidential="true">true</QualitySafety>
+                <OpeningRefillFile attachmentID="a8fb691e-e6b1-4dd7-a0e5-9e7edad0ca70"/>
+                <ChildTamperProof confidential="true">true</ChildTamperProof>
+                <HighPurity confidential="true">true</HighPurity>
+                <NonRisk confidential="true">true</NonRisk>
+                <ConsistentDosing confidential="true">true</ConsistentDosing>
+                <ConsistentDosingMethodsFile/>
+                <LeafletFile/>
+                <CoilResistance confidential="false">-1.0</CoilResistance>
+            </Design>
+        </Product>
+    </ecigProductSubmission>
+    <Status>VALIDATED</Status>
+    <exportDate>2018-09-20T18:07:14.789+02:00</exportDate>
+    <SubmitterHierarchyId>f2f82d8c-3ca2-4891-b9c6-ba6a5ca9a87b#0</SubmitterHierarchyId>
+    <referenceUuids>
+        <submitterFileUuid>f2f82d8c-3ca2-4891-b9c6-ba6a5ca9a87b</submitterFileUuid>
+        <attachmentFileUuid>a1d46cc1-29ee-47f6-b5ca-e5937fbd17fb</attachmentFileUuid>
+        <attachmentFileUuid>dbfc6273-ea87-42c5-9fa4-e35802cc9a4a</attachmentFileUuid>
+    </referenceUuids>
+</ECigProductFile>
