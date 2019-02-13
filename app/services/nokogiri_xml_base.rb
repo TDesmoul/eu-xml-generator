@@ -6,10 +6,13 @@ class NokogiriXmlBase
     @doc = Nokogiri::XML(file)
   end
 
-  def add_element(parent, node_name, content)
-    new_element = Nokogiri::XML::Node.new(node_name, @doc)
+  def insert_xml_element(parent, element)
+    @doc.at(parent).add_child(element)
+  end
+
+  def create_xml_node(node_name, content)
+    Nokogiri::XML::Node.new(node_name, @doc)
     new_element.content = content
-    @doc.at(parent).add_child(new_element)
   end
 
   def write_xml(file_name)
