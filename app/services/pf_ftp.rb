@@ -1,4 +1,5 @@
 class PfFtp
+  attr_reader :ftp
   require "net/ftp"
 
   def initialize
@@ -7,11 +8,11 @@ class PfFtp
     puts "connexion au FTP réussie"
   end
 
-  def download_file(directory, file_name, file_type)
-    @ftp.chdir(directory)
-    @ftp.getbinaryfile(file_name, Rails.root + 'lib/xml_files/' + file_name)
+  def download_file(ftp_directory, local_directory, file_name)
+    @ftp.chdir(ftp_directory)
+    @ftp.getbinaryfile(file_name, local_directory + file_name)
     @ftp.close
-    puts "le #{file_type} a bien été téléchargé"
+    puts "#{file_name} téléchargé!"
   end
 
   def upload_file(file_name)
@@ -22,4 +23,28 @@ class PfFtp
     @ftp.close
     puts "#{file_name} uploadé sur le FTP!"
   end
+
+
+  def get_files_list(repository)
+    puts "Récupération de la liste des fichiers présent dans #{repository}..."
+    repo_path = ["csvs", repository].join("/")
+    @ftp.chdir(repo_path)
+    files = @ftp.nlst()
+    @ftp.close
+    { repo: repo_path, list: files }
+  end
+
+  # def download_tracking_infos_files(arg = {})
+  #   puts "Récupération des fichiers de tracking depuis le FTP..."
+  #   directory = "#{ENV['PF_FTP_DIR_TRACKING_SOURCE']}#{"/test" if arg[:dir] == "test"}"
+  #   @ftp.chdir(directory)
+  #   files = @ftp.nlst() - ["test"]
+  #   files.each do |file_name|
+  #     file_path = Rails.root + 'lib/csv_files/' + file_name
+  #     @ftp.getbinaryfile(file_name, file_path)
+  #   end
+  #   @ftp.close
+  #   puts "#{files.count} fichiers ont été récupérés sur le FTP : #{files}"
+  #   files
+  # end
 end
