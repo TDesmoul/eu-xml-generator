@@ -14,7 +14,7 @@ class SaveCsvDatas::Elements
       filepath = Rails.root + "lib/csv_files/#{elements}/" + file
       # on ouvre le fichier
       CSV.foreach(filepath, csv_options) do |row|
-        self.process_row(row)
+        self.process_row(row.to_h)
       end
       # on supprime le fichier
       FileUtils.rm_rf(Dir.glob("#{Rails.root}/lib/csv_files/#{elements}/#{file}"))

@@ -1,6 +1,8 @@
 class XmlElement::Update
   def self.call(element, record)
-    element.at
-
+    record.datas.each do |tag, value|
+      element.at(tag).content = value
+    end
+    element
   end
 end

@@ -5,8 +5,11 @@ class SaveCsvDatas::ProductDatas < SaveCsvDatas::Elements
 
   def self.process_row(row)
     product = Product.find_by(ref: row["product_id"]) || Product.new
-    product.ref = row["product_id"]
-    product.datas = row.delete_if{ |k, v| k == "product_id" }
+    product.submitter_file_name = row.delete("submitter_file_name")
+    product.manufacturer_file_name = row.delete("manufacturer_file_name")
+    product.design_file_name = row.delete("design_file_name")
+    product.ref = row.delete("product_id")
+    product.datas = row
     product.save!
   end
 end
