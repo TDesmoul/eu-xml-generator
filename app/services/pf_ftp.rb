@@ -15,6 +15,13 @@ class PfFtp
     puts "#{file_name} téléchargé!"
   end
 
+  def download_xml_base(new_file_name)
+    @ftp.chdir("source_xmls")
+    @ftp.getbinaryfile("base.xml", Rails.root + "lib/xml_files/#{new_file_name}")
+    @ftp.close
+    puts "XML base downloaded and saved as #{new_file_name}"
+  end
+
   def upload_file(file_name)
     directory = ENV['PF_FTP_DIR_MP_ORDERS']
     file_path = Rails.root + "lib/xml_files/#{file_name}"
