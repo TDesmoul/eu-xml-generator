@@ -1,4 +1,4 @@
-class SaveInDb::ProductDatas < SaveInDb::Elements
+class SaveCsvDatas::ProductDatas < SaveCsvDatas::Elements
   def self.call
     super("product_datas")
   end

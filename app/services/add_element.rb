@@ -16,12 +16,3 @@
 ## création du XML cible :
   # je récupère le XML base sur le FTP
   # je l'enregistre en local avec l'id du produit en nom
-
-## enregistrement des valeurs personnalisées en BdD :
-  # je recupère tous les fichiers présents dans product_datas et pour chacun
-    # j'enregistre chaque ligne
-      # si le product_id n'existe pas en base
-        # je le créé
-      # sinon
-        # je mets à jour la base
-  # j'enregistre les countries, ingredients, et emissions

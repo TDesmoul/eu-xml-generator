@@ -1,11 +1,11 @@
-class SaveInDb::Emissions < SaveInDb::Elements
+class SaveCsvDatas::Ingredients < SaveCsvDatas::Elements
   def self.call
-    super("emissions")
+    super("ingredients")
   end
 
   def self.process_row(row)
     if product = Product.find_by(ref: row["product_id"])
-      product.emissions.create(cas:      row["CasNumber"],
+      product.ingredients.create(cas:    row["CasNumber"],
                                quantity: row["RecipeQuantity"])
     end
   end

@@ -1,4 +1,4 @@
-class SaveInDb::Elements
+class SaveCsvDatas::Elements
   require 'csv'
 
   def self.call(elements)

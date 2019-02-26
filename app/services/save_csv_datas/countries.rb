@@ -1,4 +1,4 @@
-class SaveInDb::Countries < SaveInDb::Elements
+class SaveCsvDatas::Countries < SaveCsvDatas::Elements
   def self.call
     super("countries")
   end
