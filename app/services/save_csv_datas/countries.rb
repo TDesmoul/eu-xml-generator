@@ -5,7 +5,9 @@ class SaveCsvDatas::Countries < SaveCsvDatas::Elements
 
   def self.process_row(row)
     if product = Product.find_by(ref: row["product_id"])
-      product.countries.create(code: row["NationalMarket"])
+      row[1..-1].each do |country|
+        product.countries.create(code: country)
+      end
     end
   end
 end
