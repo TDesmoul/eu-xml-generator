@@ -9,9 +9,11 @@ class SaveCsvDatas::Elements
     csv_options = { col_sep: ';', headers: :first_row, encoding: "windows-1252:utf-8" }
     files[:list].each do |file|                    # pour chaque nom de la liste
       filepath = Rails.root + "lib/csv_files/#{elements}/" + file
+      puts "traitement du fichier #{filepath}"
       CSV.foreach(filepath, csv_options) do |row|  # on ouvre le fichier et on traite les lignes
         self.process_row(row.to_h)
       end                                          # on supprime le fichier
+      puts "Suppression du fichier téléchargé"
       FileUtils.rm_rf(Dir.glob("#{Rails.root}/lib/csv_files/#{elements}/#{file}"))
     end
   end

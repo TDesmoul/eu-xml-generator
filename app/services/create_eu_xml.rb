@@ -1,6 +1,6 @@
 class CreateEuXml
   def self.call(product)
-    # on récupère la base XML
+    # on récupère la base XML dans un nouveau fichier
     file_path = Rails.root + "lib/xml_files/#{product.ref}.xml"
     base = XmlBase::Retrieve.call(file_path)
 
