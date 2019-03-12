@@ -46,8 +46,7 @@ class CreateEuXml
 
     # on ajoute les emissions
     product.emissions.each do |emission|
-      xml_emission = XmlElement::Retrieve.call(:emission,
-        file: "#{emission.cas}.xml")
+      xml_emission = XmlEmission::Retrieve.call(emission.file_name, emission.cas)
       xml_emission.at("Quantity").content = emission.quantity
       xml_emission.at("Attachment").set_attribute("attachmentID",
         product.nicotine_dose_uptake_file)
