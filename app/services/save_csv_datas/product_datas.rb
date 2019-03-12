@@ -10,7 +10,7 @@ class SaveCsvDatas::ProductDatas < SaveCsvDatas::Elements
     product.presentation_file_name = row.delete("presentation_file_name")
     product.design_file_name = row.delete("design_file_name")
     product.ref = row.delete("product_id")
-    product.uuid = row.["uuid"]
+    product.uuid = row["uuid"]
     product.nicotine_dose_uptake_file = row.delete("NicotineDoseUptakeFile")
     product.consistent_dosing_methods_file = row.delete("ConsistentDosingMethodsFile")
     product.datas = row.select{ |k,v| self.product_data?(k) }
