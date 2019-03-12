@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_094856) do
+ActiveRecord::Schema.define(version: 2019_03_12_141940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_094856) do
     t.string "manufacturer_file_name"
     t.string "design_file_name"
     t.string "presentation_file_name"
+    t.string "uuid"
   end
 
   add_foreign_key "countries", "products"

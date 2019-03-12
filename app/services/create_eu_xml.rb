@@ -1,7 +1,7 @@
 class CreateEuXml
   def self.call(product)
     # on récupère la base XML dans un nouveau fichier
-    file_path = Rails.root + "lib/xml_files/#{product.ref}.xml"
+    file_path = Rails.root + "lib/xml_files/#{product.uuid}.xml"
     base = XmlBase::Retrieve.call(file_path)
 
     # on met à jour les éléments de niveau 1
@@ -10,15 +10,15 @@ class CreateEuXml
     end
     self.write_xml(file_path, base)
 
-    # on ajoute le manufacturer
-    manufacturer = XmlElement::Retrieve.call(:manufacturer,
-      file: "#{product.manufacturer_file_name}.xml")
-    base.at("Manufacturers").add_child(manufacturer)
-    self.write_xml(file_path, base)
+    # # on ajoute le manufacturer
+    # manufacturer = XmlElement::Retrieve.call(:manufacturer,
+    #   file: "#{product.manufacturer_file_name}.xml")
+    # base.at("Manufacturers").add_child(manufacturer)
+    # self.write_xml(file_path, base)
 
     # on récupère 'presentation'
     presentation = XmlElement::Retrieve.call(:presentation,
-      file: "#{product.presentation_file_name}.xml")
+      file: "#{product.presentation_file_name}")
     # on update les infos de base
     product.presentation.datas.each do |tag, value|
       presentation.at(tag).content = value
@@ -48,15 +48,15 @@ class CreateEuXml
     end
     self.write_xml(file_path, base)
 
-    # on ajoute le design
-    design = XmlElement::Retrieve.call(:design,
-      file: "#{product.design_file_name}.xml")
-    # on update les infos de base
-    product.design.datas.each do |tag, value|
-      design.at(tag).content = value
-    end
-    base.at("Design").replace(design)
-    self.write_xml(file_path, base)
+    # # on ajoute le design
+    # design = XmlElement::Retrieve.call(:design,
+    #   file: "#{product.design_file_name}.xml")
+    # # on update les infos de base
+    # product.design.datas.each do |tag, value|
+    #   design.at(tag).content = value
+    # end
+    # base.at("Design").replace(design)
+    # self.write_xml(file_path, base)
 
     # on upload le fichier sur le FTP
     PfFtp.new.upload_file("target_xmls", file_path)
