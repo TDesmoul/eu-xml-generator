@@ -7,7 +7,7 @@ class SaveCsvDatas::Emissions < SaveCsvDatas::Elements
     if product = Product.find_by(ref: row["product_id"])
       puts "Création d'une nouvelle emission pour #{product.ref}"
       product.emissions.create(cas:       row["CasNumber"],
-                               quantity:  row["RecipeQuantity"],
+                               quantity:  row["Quantity"],
                                product_identification: row["ProductIdentification"],
                                file_name: row["Emissions_file_name"])
     end
