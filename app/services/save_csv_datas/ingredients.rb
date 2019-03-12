@@ -8,7 +8,6 @@ class SaveCsvDatas::Ingredients < SaveCsvDatas::Elements
       puts "Création d'un nouvel ingerdient pour #{product.ref}"
       product.ingredients.create(cas:       row["CasNumber"],
                                  quantity:  row["RecipeQuantity"],
-                                 product_identification: row["ProductIdentification"],
                                  file_name: row["Ingredients_file_name"],
                                  datas:     row)
     end

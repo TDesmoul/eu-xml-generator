@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_144823) do
+ActiveRecord::Schema.define(version: 2019_03_12_152046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_144823) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "file_name"
+    t.string "product_identification"
     t.index ["product_id"], name: "index_emissions_on_product_id"
   end
 
@@ -49,7 +50,6 @@ ActiveRecord::Schema.define(version: 2019_03_12_144823) do
     t.datetime "updated_at", null: false
     t.json "datas"
     t.string "file_name"
-    t.string "product_identification"
     t.index ["product_id"], name: "index_ingredients_on_product_id"
   end
 

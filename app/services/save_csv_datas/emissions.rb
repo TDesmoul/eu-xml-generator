@@ -8,6 +8,7 @@ class SaveCsvDatas::Emissions < SaveCsvDatas::Elements
       puts "Création d'une nouvelle emission pour #{product.ref}"
       product.emissions.create(cas:       row["CasNumber"],
                                quantity:  row["RecipeQuantity"],
+                               product_identification: row["ProductIdentification"],
                                file_name: row["Emissions_file_name"])
     end
   end

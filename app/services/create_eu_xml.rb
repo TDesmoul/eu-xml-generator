@@ -39,7 +39,6 @@ class CreateEuXml
     product.ingredients.each do |ingredient|
       xml_ingredient = XmlIngredient::Retrieve.call(ingredient.file_name, ingredient.cas)
       xml_ingredient.at("RecipeQuantity").content = ingredient.quantity
-      xml_ingredient.at("ProductIdentification").content = ingredient.product_identification
       base.at("Ingredients").add_child(xml_ingredient)
     end
     self.write_xml(file_path, base)
@@ -48,6 +47,7 @@ class CreateEuXml
     product.emissions.each do |emission|
       xml_emission = XmlEmission::Retrieve.call(emission.file_name, emission.cas)
       xml_emission.at("Quantity").content = emission.quantity
+      xml_emission.at("ProductIdentification").content = emission.product_identification
       xml_emission.at("Attachment").set_attribute("attachmentID",
         product.nicotine_dose_uptake_file)
       base.at("Emissions").add_child(xml_emission)
