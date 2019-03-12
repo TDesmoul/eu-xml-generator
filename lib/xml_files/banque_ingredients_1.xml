@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Ingredients>
+    <Ingredient>
+        <Name confidential="true">MONOPROPYLENE GLYCOL</Name>
+        <CasNumberExists confidential="true">true</CasNumberExists>
+        <CasNumber confidential="true">57-55-6</CasNumber>
+        <AdditionalCasNumbers>
+            <CasNumber confidential="false"/>
+        </AdditionalCasNumbers>
+        <FemaNumber confidential="false"/>
+        <AdditiveNumber confidential="false"/>
+        <FlNumber confidential="false"/>
+        <EcNumber confidential="false"/>
+        <OtherNumber confidential="false"/>
+        <RecipeQuantity confidential="true">5392.0</RecipeQuantity>
+        <Functions>
+            <Function confidential="true">4</Function>
+        </Functions>
+        <FunctionOther confidential="false"/>
+        <ToxicityStatus confidential="false">0</ToxicityStatus>
+        <ReachRegistration confidential="true">NOT_YET_REGISTERED</ReachRegistration>
+        <ReachRegistrationNumber confidential="false"/>
+        <ClpWhetherClassification confidential="false">false</ClpWhetherClassification>
+        <ClpAcuteToxOral confidential="false"/>
+        <ClpAcuteToxDermal confidential="false"/>
+        <ClpAcuteToxInhalation confidential="false"/>
+        <ClpSkinCorrosiveIrritant confidential="false"/>
+        <ClpEyeDamageIrritation confidential="false"/>
+        <ClpRespiratorySensitisation confidential="false"/>
+        <ClpSkinSensitisation confidential="false"/>
+        <ClpMutagenGenotox confidential="false"/>
+        <ClpCarcinogenicity confidential="false"/>
+        <ClpReproductiveTox confidential="false"/>
+        <ClpStot confidential="false"/>
+        <ClpStotDescription confidential="false"/>
+        <ClpAspirationTox confidential="false"/>
+        <ToxicologicalDetails>
+            <ToxicologicalDataAvailable confidential="false">1</ToxicologicalDataAvailable>
+            <ToxEmission confidential="false">false</ToxEmission>
+            <ToxCmr confidential="false">false</ToxCmr>
+            <ToxCardioPulmonary confidential="false">false</ToxCardioPulmonary>
+            <ToxAddictive confidential="true">false</ToxAddictive>
+            <ToxOther confidential="false">false</ToxOther>
+            <ToxEmissionFiles>
+                <Attachment/>
+            </ToxEmissionFiles>
+            <ToxCmrFiles>
+                <Attachment/>
+            </ToxCmrFiles>
+            <ToxCardioPulmonaryFiles>
+                <Attachment/>
+            </ToxCardioPulmonaryFiles>
+            <ToxAddictiveFiles>
+                <Attachment/>
+            </ToxAddictiveFiles>
+            <ToxOtherFiles>
+                <Attachment/>
+            </ToxOtherFiles>
+        </ToxicologicalDetails>
+        <IdentificationRefillContainerCartridge confidential="false"/>
+    </Ingredient>
+    <Ingredient>
+        <Name confidential="true">GLYCEROL</Name>
+        <CasNumberExists confidential="true">true</CasNumberExists>
+        <CasNumber confidential="true">56-81-5</CasNumber>
+        <AdditionalCasNumbers>
+            <CasNumber confidential="false"/>
+        </AdditionalCasNumbers>
+        <FemaNumber confidential="false"/>
+        <AdditiveNumber confidential="false"/>
+        <FlNumber confidential="false"/>
+        <EcNumber confidential="false"/>
+        <OtherNumber confidential="false"/>
+        <RecipeQuantity confidential="true">5683.0</RecipeQuantity>
+        <Functions>
+            <Function confidential="true">4</Function>
+        </Functions>
+        <FunctionOther confidential="false"/>
+        <ToxicityStatus confidential="false">0</ToxicityStatus>
+        <ReachRegistration confidential="true">NOT_YET_REGISTERED</ReachRegistration>
+        <ReachRegistrationNumber confidential="false"/>
+        <ClpWhetherClassification confidential="false">false</ClpWhetherClassification>
+        <ClpAcuteToxOral confidential="false"/>
+        <ClpAcuteToxDermal confidential="false"/>
+        <ClpAcuteToxInhalation confidential="false"/>
+        <ClpSkinCorrosiveIrritant confidential="false"/>
+        <ClpEyeDamageIrritation confidential="false"/>
+        <ClpRespiratorySensitisation confidential="false"/>
+        <ClpSkinSensitisation confidential="false"/>
+        <ClpMutagenGenotox confidential="false"/>
+        <ClpCarcinogenicity confidential="false"/>
+        <ClpReproductiveTox confidential="false"/>
+        <ClpStot confidential="false"/>
+        <ClpStotDescription confidential="false"/>
+        <ClpAspirationTox confidential="false"/>
+        <ToxicologicalDetails>
+            <ToxicologicalDataAvailable confidential="false">1</ToxicologicalDataAvailable>
+            <ToxEmission confidential="false">false</ToxEmission>
+            <ToxCmr confidential="false">false</ToxCmr>
+            <ToxCardioPulmonary confidential="false">false</ToxCardioPulmonary>
+            <ToxAddictive confidential="false">false</ToxAddictive>
+            <ToxOther confidential="false">false</ToxOther>
+            <ToxEmissionFiles>
+                <Attachment/>
+            </ToxEmissionFiles>
+            <ToxCmrFiles>
+                <Attachment/>
+            </ToxCmrFiles>
+            <ToxCardioPulmonaryFiles>
+                <Attachment/>
+            </ToxCardioPulmonaryFiles>
+            <ToxAddictiveFiles>
+                <Attachment/>
+            </ToxAddictiveFiles>
+            <ToxOtherFiles>
+                <Attachment/>
+            </ToxOtherFiles>
+        </ToxicologicalDetails>
+        <IdentificationRefillContainerCartridge confidential="false"/>
+    </Ingredient>
+    <Ingredient>
+        <Name confidential="true">NICOTINE</Name>
+        <CasNumberExists confidential="true">true</CasNumberExists>
+        <CasNumber confidential="true">54-11-5</CasNumber>
+        <AdditionalCasNumbers>
+            <CasNumber confidential="false"/>
+        </AdditionalCasNumbers>
+        <FemaNumber confidential="false"/>
+        <AdditiveNumber confidential="false"/>
+        <FlNumber confidential="false"/>
+        <EcNumber confidential="false"/>
+        <OtherNumber confidential="false"/>
+        <RecipeQuantity confidential="true">120.0</RecipeQuantity>
+        <Functions>
+            <Function confidential="true">1</Function>
+        </Functions>
+        <FunctionOther confidential="false"/>
+        <ToxicityStatus confidential="false">0</ToxicityStatus>
+        <ReachRegistration confidential="false"/>
+        <ReachRegistrationNumber confidential="true">01-2120066934-47-0000</ReachRegistrationNumber>
+        <ClpWhetherClassification confidential="false">true</ClpWhetherClassification>
+        <ClpAcuteToxOral confidential="true">2</ClpAcuteToxOral>
+        <ClpAcuteToxDermal confidential="true">2</ClpAcuteToxDermal>
+        <ClpAcuteToxInhalation confidential="true">2</ClpAcuteToxInhalation>
+        <ClpSkinCorrosiveIrritant confidential="false"/>
+        <ClpEyeDamageIrritation confidential="false"/>
+        <ClpRespiratorySensitisation confidential="false"/>
+        <ClpSkinSensitisation confidential="false"/>
+        <ClpMutagenGenotox confidential="false"/>
+        <ClpCarcinogenicity confidential="false"/>
+        <ClpReproductiveTox confidential="false"/>
+        <ClpStot confidential="false"/>
+        <ClpStotDescription confidential="false"/>
+        <ClpAspirationTox confidential="false"/>
+        <ToxicologicalDetails>
+            <ToxicologicalDataAvailable confidential="false">2</ToxicologicalDataAvailable>
+            <ToxEmission confidential="false">false</ToxEmission>
+            <ToxCmr confidential="false">false</ToxCmr>
+            <ToxCardioPulmonary confidential="false">false</ToxCardioPulmonary>
+            <ToxAddictive confidential="true">true</ToxAddictive>
+            <ToxOther confidential="false">false</ToxOther>
+            <ToxEmissionFiles>
+                <Attachment/>
+            </ToxEmissionFiles>
+            <ToxCmrFiles>
+                <Attachment/>
+            </ToxCmrFiles>
+            <ToxCardioPulmonaryFiles>
+                <Attachment/>
+            </ToxCardioPulmonaryFiles>
+            <ToxAddictiveFiles>
+                <Attachment attachmentID="fa98fdbd-abeb-4199-8dae-5623fc7ef221"/>
+            </ToxAddictiveFiles>
+            <ToxOtherFiles>
+                <Attachment/>
+            </ToxOtherFiles>
+        </ToxicologicalDetails>
+        <IdentificationRefillContainerCartridge confidential="false"/>
+    </Ingredient>
+    <Ingredient>
+        <Name confidential="true">L-menthol</Name>
+        <CasNumberExists confidential="false">true</CasNumberExists>
+        <CasNumber confidential="true">2216-51-5</CasNumber>
+        <AdditionalCasNumbers>
+            <CasNumber confidential="false"/>
+        </AdditionalCasNumbers>
+        <FemaNumber confidential="false"/>
+        <AdditiveNumber confidential="false"/>
+        <FlNumber confidential="false"/>
+        <EcNumber confidential="false"/>
+        <OtherNumber confidential="false"/>
+        <RecipeQuantity confidential="true">75.0</RecipeQuantity>
+        <Functions>
+            <Function confidential="true">12</Function>
+        </Functions>
+        <FunctionOther confidential="false"/>
+        <ToxicityStatus confidential="false">0</ToxicityStatus>
+        <ReachRegistration confidential="false"/>
+        <ReachRegistrationNumber confidential="true">01-2119458866-21-0000</ReachRegistrationNumber>
+        <ClpWhetherClassification confidential="false">false</ClpWhetherClassification>
+        <ClpAcuteToxOral confidential="false"/>
+        <ClpAcuteToxDermal confidential="false"/>
+        <ClpAcuteToxInhalation confidential="false"/>
+        <ClpSkinCorrosiveIrritant confidential="false"/>
+        <ClpEyeDamageIrritation confidential="false"/>
+        <ClpRespiratorySensitisation confidential="false"/>
+        <ClpSkinSensitisation confidential="false"/>
+        <ClpMutagenGenotox confidential="false"/>
+        <ClpCarcinogenicity confidential="false"/>
+        <ClpReproductiveTox confidential="false"/>
+        <ClpStot confidential="false"/>
+        <ClpStotDescription confidential="false"/>
+        <ClpAspirationTox confidential="false"/>
+        <ToxicologicalDetails>
+            <ToxicologicalDataAvailable confidential="true">1</ToxicologicalDataAvailable>
+            <ToxEmission confidential="false">false</ToxEmission>
+            <ToxCmr confidential="false">false</ToxCmr>
+            <ToxCardioPulmonary confidential="false">false</ToxCardioPulmonary>
+            <ToxAddictive confidential="false">false</ToxAddictive>
+            <ToxOther confidential="false">false</ToxOther>
+            <ToxEmissionFiles>
+                <Attachment/>
+            </ToxEmissionFiles>
+            <ToxCmrFiles>
+                <Attachment/>
+            </ToxCmrFiles>
+            <ToxCardioPulmonaryFiles>
+                <Attachment/>
+            </ToxCardioPulmonaryFiles>
+            <ToxAddictiveFiles>
+                <Attachment/>
+            </ToxAddictiveFiles>
+            <ToxOtherFiles>
+                <Attachment/>
+            </ToxOtherFiles>
+        </ToxicologicalDetails>
+        <IdentificationRefillContainerCartridge confidential="false"/>
+    </Ingredient>
+    <Ingredient>
+        <Name confidential="true">ethyl maltol</Name>
+        <CasNumberExists confidential="false">true</CasNumberExists>
+        <CasNumber confidential="true">4940-11-8</CasNumber>
+        <AdditionalCasNumbers>
+            <CasNumber confidential="false"/>
+        </AdditionalCasNumbers>
+        <FemaNumber confidential="false"/>
+        <AdditiveNumber confidential="false"/>
+        <FlNumber confidential="false"/>
+        <EcNumber confidential="false"/>
+        <OtherNumber confidential="false"/>
+        <RecipeQuantity confidential="true">30.0</RecipeQuantity>
+        <Functions>
+            <Function confidential="true">4</Function>
+        </Functions>
+        <FunctionOther confidential="false"/>
+        <ToxicityStatus confidential="false">0</ToxicityStatus>
+        <ReachRegistration confidential="true">NOT_YET_REGISTERED</ReachRegistration>
+        <ReachRegistrationNumber confidential="false"/>
+        <ClpWhetherClassification confidential="false">false</ClpWhetherClassification>
+        <ClpAcuteToxOral confidential="false"/>
+        <ClpAcuteToxDermal confidential="false"/>
+        <ClpAcuteToxInhalation confidential="false"/>
+        <ClpSkinCorrosiveIrritant confidential="false"/>
+        <ClpEyeDamageIrritation confidential="false"/>
+        <ClpRespiratorySensitisation confidential="false"/>
+        <ClpSkinSensitisation confidential="false"/>
+        <ClpMutagenGenotox confidential="false"/>
+        <ClpCarcinogenicity confidential="false"/>
+        <ClpReproductiveTox confidential="false"/>
+        <ClpStot confidential="false"/>
+        <ClpStotDescription confidential="false"/>
+        <ClpAspirationTox confidential="false"/>
+        <ToxicologicalDetails>
+            <ToxicologicalDataAvailable confidential="true">1</ToxicologicalDataAvailable>
+            <ToxEmission confidential="false">false</ToxEmission>
+            <ToxCmr confidential="false">false</ToxCmr>
+            <ToxCardioPulmonary confidential="false">false</ToxCardioPulmonary>
+            <ToxAddictive confidential="false">false</ToxAddictive>
+            <ToxOther confidential="false">false</ToxOther>
+            <ToxEmissionFiles>
+                <Attachment/>
+            </ToxEmissionFiles>
+            <ToxCmrFiles>
+                <Attachment/>
+            </ToxCmrFiles>
+            <ToxCardioPulmonaryFiles>
+                <Attachment/>
+            </ToxCardioPulmonaryFiles>
+            <ToxAddictiveFiles>
+                <Attachment/>
+            </ToxAddictiveFiles>
+            <ToxOtherFiles>
+                <Attachment/>
+            </ToxOtherFiles>
+        </ToxicologicalDetails>
+        <IdentificationRefillContainerCartridge confidential="false"/>
+    </Ingredient>
+    <Ingredient>
+        <Name confidential="true">ethyl acetate</Name>
+        <CasNumberExists confidential="false">true</CasNumberExists>
+        <CasNumber confidential="true">141-78-6</CasNumber>
+        <AdditionalCasNumbers>
+            <CasNumber confidential="false"/>
+        </AdditionalCasNumbers>
+        <FemaNumber confidential="false"/>
+        <AdditiveNumber confidential="false"/>
+        <FlNumber confidential="false"/>
+        <EcNumber confidential="false"/>
+        <OtherNumber confidential="false"/>
+        <RecipeQuantity confidential="true">20.0</RecipeQuantity>
+        <Functions>
+            <Function confidential="true">4</Function>
+        </Functions>
+        <FunctionOther confidential="false"/>
+        <ToxicityStatus confidential="false">0</ToxicityStatus>
+        <ReachRegistration confidential="true">NOT_YET_REGISTERED</ReachRegistration>
+        <ReachRegistrationNumber confidential="false"/>
+        <ClpWhetherClassification confidential="false">false</ClpWhetherClassification>
+        <ClpAcuteToxOral confidential="false"/>
+        <ClpAcuteToxDermal confidential="false"/>
+        <ClpAcuteToxInhalation confidential="false"/>
+        <ClpSkinCorrosiveIrritant confidential="false"/>
+        <ClpEyeDamageIrritation confidential="false"/>
+        <ClpRespiratorySensitisation confidential="false"/>
+        <ClpSkinSensitisation confidential="false"/>
+        <ClpMutagenGenotox confidential="false"/>
+        <ClpCarcinogenicity confidential="false"/>
+        <ClpReproductiveTox confidential="false"/>
+        <ClpStot confidential="false"/>
+        <ClpStotDescription confidential="false"/>
+        <ClpAspirationTox confidential="false"/>
+        <ToxicologicalDetails>
+            <ToxicologicalDataAvailable confidential="true">1</ToxicologicalDataAvailable>
+            <ToxEmission confidential="false">false</ToxEmission>
+            <ToxCmr confidential="false">false</ToxCmr>
+            <ToxCardioPulmonary confidential="false">false</ToxCardioPulmonary>
+            <ToxAddictive confidential="false">false</ToxAddictive>
+            <ToxOther confidential="false">false</ToxOther>
+            <ToxEmissionFiles>
+                <Attachment/>
+            </ToxEmissionFiles>
+            <ToxCmrFiles>
+                <Attachment/>
+            </ToxCmrFiles>
+            <ToxCardioPulmonaryFiles>
+                <Attachment/>
+            </ToxCardioPulmonaryFiles>
+            <ToxAddictiveFiles>
+                <Attachment/>
+            </ToxAddictiveFiles>
+            <ToxOtherFiles>
+                <Attachment/>
+            </ToxOtherFiles>
+        </ToxicologicalDetails>
+        <IdentificationRefillContainerCartridge confidential="false"/>
+    </Ingredient>
+    <Ingredient>
+        <Name confidential="true">isopentyl acetate</Name>
+        <CasNumberExists confidential="false">true</CasNumberExists>
+        <CasNumber confidential="true">123-92-2</CasNumber>
+        <AdditionalCasNumbers>
+            <CasNumber confidential="false"/>
+        </AdditionalCasNumbers>
+        <FemaNumber confidential="false"/>
+        <AdditiveNumber confidential="false"/>
+        <FlNumber confidential="false"/>
+        <EcNumber confidential="false"/>
+        <OtherNumber confidential="false"/>
+        <RecipeQuantity confidential="true">17.0</RecipeQuantity>
+        <Functions>
+            <Function confidential="true">4</Function>
+        </Functions>
+        <FunctionOther confidential="false"/>
+        <ToxicityStatus confidential="false">0</ToxicityStatus>
+        <ReachRegistration confidential="true"/>
+        <ReachRegistrationNumber confidential="true">01-2119548408-32-0000</ReachRegistrationNumber>
+        <ClpWhetherClassification confidential="false">false</ClpWhetherClassification>
+        <ClpAcuteToxOral confidential="false"/>
+        <ClpAcuteToxDermal confidential="false"/>
+        <ClpAcuteToxInhalation confidential="false"/>
+        <ClpSkinCorrosiveIrritant confidential="false"/>
+        <ClpEyeDamageIrritation confidential="false"/>
+        <ClpRespiratorySensitisation confidential="false"/>
+        <ClpSkinSensitisation confidential="false"/>
+        <ClpMutagenGenotox confidential="false"/>
+        <ClpCarcinogenicity confidential="false"/>
+        <ClpReproductiveTox confidential="false"/>
+        <ClpStot confidential="false"/>
+        <ClpStotDescription confidential="false"/>
+        <ClpAspirationTox confidential="false"/>
+        <ToxicologicalDetails>
+            <ToxicologicalDataAvailable confidential="true">1</ToxicologicalDataAvailable>
+            <ToxEmission confidential="false">false</ToxEmission>
+            <ToxCmr confidential="false">false</ToxCmr>
+            <ToxCardioPulmonary confidential="false">false</ToxCardioPulmonary>
+            <ToxAddictive confidential="false">false</ToxAddictive>
+            <ToxOther confidential="false">false</ToxOther>
+            <ToxEmissionFiles>
+                <Attachment/>
+            </ToxEmissionFiles>
+            <ToxCmrFiles>
+                <Attachment/>
+            </ToxCmrFiles>
+            <ToxCardioPulmonaryFiles>
+                <Attachment/>
+            </ToxCardioPulmonaryFiles>
+            <ToxAddictiveFiles>
+                <Attachment/>
+            </ToxAddictiveFiles>
+            <ToxOtherFiles>
+                <Attachment/>
+            </ToxOtherFiles>
+        </ToxicologicalDetails>
+        <IdentificationRefillContainerCartridge confidential="false"/>
+    </Ingredient>
+    <Ingredient>
+        <Name confidential="true">Peppermint, American extract</Name>
+        <CasNumberExists confidential="false">true</CasNumberExists>
+        <CasNumber confidential="true">8006-90-4</CasNumber>
+        <AdditionalCasNumbers>
+            <CasNumber confidential="false"/>
+        </AdditionalCasNumbers>
+        <FemaNumber confidential="false"/>
+        <AdditiveNumber confidential="false"/>
+        <FlNumber confidential="false"/>
+        <EcNumber confidential="false"/>
+        <OtherNumber confidential="false"/>
+        <RecipeQuantity confidential="true">17.0</RecipeQuantity>
+        <Functions>
+            <Function confidential="true">12</Function>
+        </Functions>
+        <FunctionOther confidential="false"/>
+        <ToxicityStatus confidential="false">0</ToxicityStatus>
+        <ReachRegistration confidential="true">NOT_YET_REGISTERED</ReachRegistration>
+        <ReachRegistrationNumber confidential="false"/>
+        <ClpWhetherClassification confidential="false">false</ClpWhetherClassification>
+        <ClpAcuteToxOral confidential="false"/>
+        <ClpAcuteToxDermal confidential="false"/>
+        <ClpAcuteToxInhalation confidential="false"/>
+        <ClpSkinCorrosiveIrritant confidential="false"/>
+        <ClpEyeDamageIrritation confidential="false"/>
+        <ClpRespiratorySensitisation confidential="false"/>
+        <ClpSkinSensitisation confidential="false"/>
+        <ClpMutagenGenotox confidential="false"/>
+        <ClpCarcinogenicity confidential="false"/>
+        <ClpReproductiveTox confidential="false"/>
+        <ClpStot confidential="false"/>
+        <ClpStotDescription confidential="false"/>
+        <ClpAspirationTox confidential="false"/>
+        <ToxicologicalDetails>
+            <ToxicologicalDataAvailable confidential="true">1</ToxicologicalDataAvailable>
+            <ToxEmission confidential="false">false</ToxEmission>
+            <ToxCmr confidential="false">false</ToxCmr>
+            <ToxCardioPulmonary confidential="false">false</ToxCardioPulmonary>
+            <ToxAddictive confidential="false">false</ToxAddictive>
+            <ToxOther confidential="false">false</ToxOther>
+            <ToxEmissionFiles>
+                <Attachment/>
+            </ToxEmissionFiles>
+            <ToxCmrFiles>
+                <Attachment/>
+            </ToxCmrFiles>
+            <ToxCardioPulmonaryFiles>
+                <Attachment/>
+            </ToxCardioPulmonaryFiles>
+            <ToxAddictiveFiles>
+                <Attachment/>
+            </ToxAddictiveFiles>
+            <ToxOtherFiles>
+                <Attachment/>
+            </ToxOtherFiles>
+        </ToxicologicalDetails>
+        <IdentificationRefillContainerCartridge confidential="false"/>
+    </Ingredient>
+</Ingredients>
