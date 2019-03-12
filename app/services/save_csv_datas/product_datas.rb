@@ -11,6 +11,8 @@ class SaveCsvDatas::ProductDatas < SaveCsvDatas::Elements
     product.design_file_name = row.delete("design_file_name")
     product.ref = row.delete("product_id")
     product.uuid = row.["uuid"]
+    product.nicotine_dose_uptake_file = row.delete("NicotineDoseUptakeFile")
+    product.consistent_dosing_methods_file = row.delete("ConsistentDosingMethodsFile")
     product.datas = row.select{ |k,v| self.product_data?(k) }
     product.save!
     Presentation.create!(
@@ -25,8 +27,7 @@ class SaveCsvDatas::ProductDatas < SaveCsvDatas::Elements
 
   def self.product_data?(k) # liste des colonnes du noeud "Product"
     ["ProductID", "uuid", "Weight", "ClpClassification", "Description",
-      "NicotineConcentration", "NicotineDoseUptakeFile",
-      "ConsistentDosingMethodsFile"].include?(k)
+      "NicotineConcentration"].include?(k)
   end
 
   def self.presentation_data?(k) # liste des colonnes du noeud "Presentation"

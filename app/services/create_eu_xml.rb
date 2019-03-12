@@ -8,6 +8,10 @@ class CreateEuXml
     product.datas.each do |tag, value|
       base.at(tag).content = value
     end
+    base.at("NicotineDoseUptakeFile").set_attribute("attachmentID",
+      product.nicotine_dose_uptake_file)
+    base.at("ConsistentDosingMethodsFile").set_attribute("attachmentID",
+      product.consistent_dosing_methods_file)
     self.write_xml(file_path, base)
 
     # # on ajoute le manufacturer
@@ -44,6 +48,8 @@ class CreateEuXml
       xml_emission = XmlElement::Retrieve.call(:emission,
         file: "#{emission.cas}.xml")
       xml_emission.at("Quantity").content = emission.quantity
+      xml_emission.at("Attachment").set_attribute("attachmentID",
+        product.nicotine_dose_uptake_file)
       base.at("Emissions").add_child(xml_emission)
     end
     self.write_xml(file_path, base)
