@@ -33,8 +33,7 @@ class CreateEuXml
 
     # on ajoute les ingredients
     product.ingredients.each do |ingredient|
-      xml_ingredient = XmlElement::Retrieve.call(:ingredient,
-        file: "#{ingredient.cas}.xml")
+      xml_ingredient = XmlIngredient::Retrieve.call(ingredient.file_name, ingredient.cas)
       xml_ingredient.at("RecipeQuantity").content = ingredient.quantity
       base.at("Ingredients").add_child(xml_ingredient)
     end
