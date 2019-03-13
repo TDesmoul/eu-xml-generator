@@ -1,2 +1,51 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  font-family: 'Special Elite', sans-serif;
+}
+
+.min-full-height {
+  min-height: 100vh;
+}
+
+.flexline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.devise-page {
+  min-height: 100%;
+}
+
+.mg-b-big {
+  margin-bottom: 40px;
+}
+
+#header {
+  margin: 20px 0;
+}
+.alert {
+  background-color: transparent !important;
+  border: none;
+  margin-bottom: 0px;
+}
+a {
+  text-decoration: underline;
+  color: black;
+  padding: 5px 2px 3px  ;
+}
+.c2a {
+  border-radius: 1px;
+  text-decoration: underline;
+  margin: 10px;
+  padding: 10px 15px 8px;
+  border: 1px solid black;
+}
+a, .c2a {
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background: black;
+  }
+}
