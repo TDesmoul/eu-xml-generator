@@ -7,14 +7,14 @@
 </div>
 <h2 class="text-center">Comment ça marche?</h2>
 <div>
-  Le principe de fonctionnement est simple : cette application génère des fichiers XML, au format attendu par l'Union Européenne pour la notification de mise sur le marché de nouveaux produits. Ces fichiers sont constitués à partir des données présentes sur le FTP dédié (espace de stockage de fichier en ligne).
+  Cette application génère des fichiers XML, au format attendu par l'Union Européenne pour la notification de mise sur le marché de nouveaux produits. Les fichiers sont constitués à partir des composants XML présents sur le FTP dédié (espace de stockage de fichier en ligne). Les valeurs particulières propres à chaque produit sont renseignées dans un fichier Excel. Elles sont enregistrées sur le FTP au format CSV, où elles sont récupérées par l'application pour adapter les composants XML de base à chaque produit.
 </div>
 <h3 class="text-center">Le FTP</h3>
 <div>
   <p>
 
     Le répertoire FTP est structuré de la façon suivante :<br>
-    |- csvs<br>
+    |- csvs<span class="comment"> => c'est ici que sont téléchargés les tableaux contenant les valeurs particulières propres aux différents produits</span><br>
       <span class="pdd-left-20px">|- countries</span><br>
       <span class="pdd-left-40px d-ib">|- <span class="t-i"><span class="t-u">countries.csv</span><span class="comment"> => onglet 'products_countries' du fichier 'datas_for_eu_xml.xlsx', enregistré au format CSV (1)</span></span></span><br>
       <span class="pdd-left-20px">|- emissions</span><br>
@@ -23,7 +23,7 @@
       <span class="pdd-left-40px d-ib">|- <span class="t-i"><span class="t-u">ingredients.csv</span><span class="comment"> => onglet 'products_ingredients' du fichier 'datas_for_eu_xml.xlsx', enregistré au format CSV (1)</span></span></span><br>
       <span class="pdd-left-20px">|- product_datas</span><br>
       <span class="pdd-left-40px d-ib">|- <span class="t-i"><span class="t-u">product_datas.csv</span><span class="comment"> => onglet 'products_datas' du fichier 'datas_for_eu_xml.xlsx', enregistré au format CSV (1)</span></span></span><br>
-    |- sources_xmls<br>
+    |- sources_xmls<span class="comment"> => c'est ici que sont téléchargés les blocs XML de base, où ils sont récupérés, modifiés et agencés pour constituer les fichiers cibles.</span><br>
       <span class="pdd-left-20px">|- emissions</span><br>
       <span class="pdd-left-40px d-ib">|- <span class="t-i"><span class="t-u">emissions_01.xml</span><span class="comment"> => 'banque' de blocs XML 'emission' : 1 bloc par cas number</span></span></span><br>
       <span class="pdd-left-20px">|- ingredients</span><br>
@@ -31,17 +31,56 @@
       <span class="pdd-left-20px">|- presentations</span><br>
       <span class="pdd-left-40px d-ib">|- <span class="t-i"><span class="t-u">presentation-01.xml</span><span class="comment"> => bloc XML 'emission' : 1 seul blocdans le fichier</span></span></span><br>
       <span class="pdd-left-20px">|- <span class="t-i t-u">base.xml</span><span class="t-i comment"> => fichier XML servant de base à la création des XMLs pour chaque produit</span></span><br>
-    |- target_xmls<br>
+    |- target_xmls<span class="t-i comment"> => c'est ici que sont enregistrés les fichiers XML cibles générés par l'application (1 fichier par produit).</span></span><br>
     |- <span class="t-i"><span class="t-u">datas_for_eu_xml.xlsx</span><span class="comment"> => fichier Excel permettant de saisir les valeurs particulières des produits</datas_for_eu_xml></span>
   </p>
   <p class="comment">(1) Le nom du fichier impote peu. Le dossier peut contenir plusiseurs fichiers : ils seront tous traités.</p>
 </div>
-<h3 class="text-center">datas_for_eu_xml.xlsx</h3>
 
+<h3 class="text-center">datas_for_eu_xml.xlsx</h3>
+<div>
+  <p>
+    C'est dans ce fichier que :
+    <ul>
+      <li>sont saisies les valeurs particulières propres aux différents produits, à intégrer dans le XML cible.</li>
+      <li>sont indiqués les noms des fichiers dans lesquels les différents composants XML doivent être récupérés ('Presentation', 'Ingredient', 'Emission'), pour être mis à jour et intégrés au fichier cible.</li>
+    </ul>
+  </p>
+  <p>
+    Le fichier est composé des onglets suivants :
+    <ul>
+      <li>
+        <span class="t-i bg-lg">products_datas</span> => on y trouve les balises XML appartenant aux noeuds 'Product', 'Presentation' et 'Design'.
+        <ul>
+          <li>La colonne 'uuid' est importante pour pouvoir générer des fichiers XML valides. Il s'agit de la compléter avec un code uuid fournit par l'application de l'europe lorsqu'on génére un nouveau fichier. On doit avoir un code différent par produit (donc par ligne).</li>
+          <li>La colonne 'presentation_file_name' doit être remplie avec le nom du fichier dans lequel l'application doit récupérer le bloc XML 'Presentation'. Ce fichier doit par ailleurs se trouver dans "sources_xmls/presentations" du FTP.</li>
+        </ul>
+      </li>
+      <li>
+        <span class="t-i bg-lg">products_countries</span> => 1 ligne par produit, en précisant les codes pays en colonne (1 code pays par colonne). Cet onglet sert à générer un bloc "Presentation" par pays.
+      </li>
+      <li>
+        <span class="t-i bg-lg">products_ingredients</span> => 1 ligne par ingrédient et par produit. Si un produit contient 10 ingrédients, cela fera donc 10 lignes.
+        <ul>
+          <li>La colonne 'Ingredients_file_name' permet de renseigner le nom du fichier dans lequel l'application doit récupérer le bloc XML 'Ingredient' correspondant au cas number. Ce fichier doit par ailleurs se trouver dans "sources_xmls/ingredients" du FTP.</li>
+        </ul>
+      </li>
+      <li>
+        <span class="t-i bg-lg">products_emissions</span> => 1 ligne par émission et par produit. Si un produit contient 10 émissions, cela fera donc 10 lignes.
+        <ul>
+          <li>La colonne 'Emissions_file_name' permet de renseigner le nom du fichier dans lequel l'application doit récupérer le bloc XML 'Emission' correspondant au cas number. Ce fichier doit par ailleurs se trouver dans "sources_xmls/emissions" du FTP.</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+  <p>
+    Une fois le fichier Excel complété, chaque onglet doit être enregistré dans un fichier '.csv' à part. Les 4 fichiers ainsi créés doivent ensuite être uploadés sur le FTP, à l'intérieur des répertoires correspondant dans 'csvs/'. Le nom des fichiers '.csv' importe peu. Tous les fichiers présents dans les répertoires 'csvs/...' seront traités.
+  </p>
+</div>
 
 <h3 class="text-center">Fonctionnement</h3>
 <div>
-  <p>L'application part d'une base pour générer les fichiers XML correspondant à chaque produit : cette base est contenue dans le fichier <span class="t-i t-u bg-lg">sources_xmls/base.xml</span>. Toutes les balises XML présentes dans ce fichier sont reprises telles quelles dans tous les fichiers générés, à l'exception des balises correspondant aux colonnes de l'onglet <span class="t-i bg-lg">product_datas</span> du fichier <span class="t-i bg-lg">datas_for_eu_xml.xlsx</span>. Celles-ci sont mises à jour en fonction des données saisies dans l'Excel.</p>
+  <p>L'application part d'une base pour générer les fichiers XML correspondant à chaque produit : cette base est contenue dans le fichier <span class="t-i t-u bg-lg">sources_xmls/base.xml</span>. Toutes les balises XML présentes dans ce fichier sont donc reprises telles quelles dans les fichiers générés par l'application, à l'exception des balises correspondant aux colonnes de l'onglet <span class="t-i bg-lg">product_datas</span> du fichier <span class="t-i bg-lg">datas_for_eu_xml.xlsx</span>. Celles-ci sont mises à jour en fonction des données saisies dans l'Excel.</p>
   <p>
     Ensuite, différents blocs <span class="t-i bg-lg">presentation, ingredient & emission</span> viennent compléter cette base :
     <ul>
