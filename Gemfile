@@ -40,6 +40,8 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem "figaro"
 gem "devise"
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 
 group :development, :test do
