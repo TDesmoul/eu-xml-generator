@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -15,6 +16,9 @@
       <%= render "shared/flashes" %>
       <div class="min-full-height <%= "flexline" if params[:controller].match("devise") %>">
         <%= yield %>
+      </div>
+      <div class="text-center border-top">
+        Made with <i class="fas fa-heart"></i> by Thomas Desmoulins
       </div>
     </div>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
