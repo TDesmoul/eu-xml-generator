@@ -10,6 +10,7 @@ class PfFtp
 
   def download_file(ftp_directory, local_directory, file_name)
     @ftp.chdir(ftp_directory)
+    File.new(local_directory + file_name, 'w')
     @ftp.getbinaryfile(file_name, local_directory + file_name)
     @ftp.close
     puts "#{file_name} téléchargé!"
