@@ -67,7 +67,7 @@
     C'est dans ce fichier que :
     <ul>
       <li>sont saisies les valeurs particulières propres aux différents produits, à intégrer dans le XML cible.</li>
-      <li>sont indiqués les noms des fichiers dans lesquels les différents composants XML doivent être récupérés (<span class="bg-lg">Presentation</span>, <span class="bg-lg">Ingredient</span>, <span class="bg-lg">Emission</span>), pour être mis à jour et intégrés au fichier cible.</li>
+      <li>sont indiqués les noms des fichiers dans lesquels les différents composants XML sont récupérés (<span class="bg-lg">Presentation</span>, <span class="bg-lg">Ingredient</span>, <span class="bg-lg">Emission</span>), avant d'être mis à jour et intégrés au XML cible.</li>
     </ul>
   </p>
   <p>
@@ -76,23 +76,23 @@
       <li>
         <span class="bg-lg">products_datas</span> => on y trouve les balises XML appartenant aux noeuds <span class="bg-lg">Product</span>, <span class="bg-lg">Presentation</span> et <span class="bg-lg">Design</span>.
         <ul>
-          <li>La colonne <span class="bg-lg">uuid</span> est importante pour pouvoir générer des fichiers XML valides. Il s'agit de la compléter avec un code uuid fournit par l'application de l'europe lorsqu'on génére un nouveau fichier. On doit avoir un code différent par produit (donc par ligne).</li>
-          <li>La colonne <span class="bg-lg">presentation_file_name</span> doit être remplie avec le nom du fichier dans lequel l'application doit récupérer le bloc XML <span class="bg-lg">Presentation</span>. Ce fichier doit par ailleurs se trouver dans <span class="bg-lg">sources_xmls/presentations</span> du FTP.</li>
+          <li>La colonne <span class="bg-lg">uuid</span> est importante pour pouvoir générer des XML cibles valides => à compléter avec un code uuid fournit par l'application de l'europe. /!\ il faut un code différent par produit (donc par ligne).</li>
+          <li>La colonne <span class="bg-lg">presentation_file_name</span> contient le nom du fichier où récupérer le bloc XML <span class="bg-lg">Presentation</span> (sur le FTP).</li>
         </ul>
       </li>
       <li>
         <span class="bg-lg">products_countries</span> => 1 ligne par produit, en précisant les codes pays en colonne (1 code pays par colonne). Cet onglet sert à générer un bloc <span class="bg-lg">Presentation</span> par pays.
       </li>
       <li>
-        <span class="bg-lg">products_ingredients</span> => 1 ligne par ingrédient et par produit. Si un produit contient 10 ingrédients, cela fera donc 10 lignes.
+        <span class="bg-lg">products_ingredients</span> => 1 ligne par ingrédient et par produit.
         <ul>
-          <li>La colonne <span class="bg-lg">Ingredients_file_name</span> permet de renseigner le nom du fichier dans lequel l'application doit récupérer le bloc XML <span class="bg-lg">Ingredient</span> correspondant au cas number. Ce fichier doit par ailleurs se trouver dans <span class="bg-lg">sources_xmls/ingredients</span> du FTP.</li>
+          <li>La colonne <span class="bg-lg">Ingredients_file_name</span> contient le nom du fichier où récupérer le bloc XML <span class="bg-lg">Ingredient</span> correspondant au cas number (sur le FTP).</li>
         </ul>
       </li>
       <li>
         <span class="bg-lg">products_emissions</span> => 1 ligne par émission et par produit. Si un produit contient 10 émissions, cela fera donc 10 lignes.
         <ul>
-          <li>La colonne <span class="bg-lg">Emissions_file_name</span> permet de renseigner le nom du fichier dans lequel l'application doit récupérer le bloc XML <span class="bg-lg">Emission</span> correspondant au cas number. Ce fichier doit par ailleurs se trouver dans <span class="bg-lg">sources_xmls/emissions</span> du FTP.</li>
+          <li>La colonne <span class="bg-lg">Emissions_file_name</span> contient le nom du fichier où récupérer le bloc XML <span class="bg-lg">Emission</span> correspondant au cas number (sur le FTP).</li>
         </ul>
       </li>
     </ul>
@@ -113,7 +113,7 @@
   <p>
     Ensuite, différents blocs <span class="bg-lg">Presentation, Ingredient & Emission</span> sont insérés :
     <ul>
-      <li>le bloc <span class="bg-lg">Presentation</span> est récupéré à l'intérieur du dossier <span class="bg-lg">sources_xmls/emissions</span>, à l'intérieur du fichier mentionné au niveau de la colonne <span class="bg-lg">presentation_file_name</span> de l'onglet <span class="bg-lg">product_datas</span> du fichier <span class="t-i t-u bg-lg">datas_for_eu_xlsx</span>. Les balises XML <span class="bg-lg">LaunchDate, ProductNumber, Year</span> sont mises à jour en fonction des valeurs saisies dans les colonnes correspondantes de l'onglet <span class="bg-lg">product_datas</span>. Le bloc est ensuite dupliqué pour chaque pays enregistrés pour le produit dans l'onglet <span class="bg-lg">products_countries</span>, en modifiant à chaque duplication la valeur du <span class="bg-lg">NationalMarket</span>.</li>
+      <li>le bloc <span class="bg-lg">Presentation</span> est récupéré à l'intérieur du dossier <span class="bg-lg">sources_xmls/presentations</span>, à l'intérieur du fichier mentionné au niveau de la colonne <span class="bg-lg">presentation_file_name</span> de l'onglet <span class="bg-lg">product_datas</span> du fichier <span class="t-i t-u bg-lg">datas_for_eu_xlsx</span>. Les balises XML <span class="bg-lg">LaunchDate, ProductNumber, Year</span> sont mises à jour en fonction des valeurs saisies dans les colonnes correspondantes de l'onglet <span class="bg-lg">product_datas</span>. Le bloc est ensuite dupliqué pour chaque pays enregistrés pour le produit dans l'onglet <span class="bg-lg">products_countries</span>, en modifiant à chaque duplication la valeur du <span class="bg-lg">NationalMarket</span>.</li>
       <li>pour chaque ingredient du produit, le bloc <span class="bg-lg">Ingredient</span> correspondant au cas number est récupéré à l'intérieur du dossier <span class="bg-lg">sources_xmls/ingredients</span>, à l'intérieur du fichier mentionné au niveau de la colonne <span class="bg-lg">ingredients_file_name</span> de l'onglet <span class="bg-lg">product_ingredients</span> du fichier <span class="t-i t-u bg-lg">datas_for_eu_xml.xlsx</span>. Les balises XML correspondant aux colonnes de l'onglet <span class="bg-lg">product_ingredients</span> sont mises à jour en fonction des valeurs saisies dans l'Excel.</li>
       <li>pour chaque emission du produit, le bloc <span class="bg-lg">Emission</span> correspondant au cas number est récupéré à l'intérieur du dossier <span class="bg-lg">sources_xmls/emissions</span>, à l'intérieur du fichier mentionné au niveau de la colonne <span class="bg-lg">emissions_file_name</span> de l'onglet <span class="bg-lg">product_emissions</span> du fichier <span class="t-i t-u bg-lg">datas_for_eu_xml.xlsx</span>. Les balises XML correspondant aux colonnes de l'onglet <span class="bg-lg">product_emissions</span> sont mises à jour en fonction des valeurs saisies dans l'Excel.</span></li>
     </ul>
