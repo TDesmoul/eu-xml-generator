@@ -1,8 +1,11 @@
 class CreateEuXml
   def self.call(product)
     # on récupère la base XML dans un nouveau fichier
-    file_path = Rails.root + "lib/xml_files/#{product.uuid}.xml"
-    base = XmlBase::Retrieve.call(file_path)
+    local_dir = Rails.root + "lib/xml_files/"
+    file_name = "#{product.uuid}.xml"
+    file_path = local_dir + file_name
+    # file_path = Rails.root + "lib/xml_files/#{product.uuid}.xml"
+    base = XmlBase::Retrieve.call(local_dir, file_name)
 
     # on met à jour les éléments de niveau 1
     product.datas.each do |tag, value|

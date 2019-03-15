@@ -10,14 +10,16 @@ class PfFtp
 
   def download_file(ftp_directory, local_directory, file_name)
     @ftp.chdir(ftp_directory)
-    File.new(local_directory + file_name, 'w')
+    FileUtils.mkdir_p(local_directory) unless File.directory?(local_directory)
     @ftp.getbinaryfile(file_name, local_directory + file_name)
     @ftp.close
     puts "#{file_name} téléchargé!"
   end
 
-  def download_xml_base(file_path)
+  def download_xml_base(local_directory, file_name)
     @ftp.chdir("source_xmls")
+    file_path = local_directory + file_name
+    FileUtils.mkdir_p(local_directory) unless File.directory?(local_directory)
     @ftp.getbinaryfile("base.xml", file_path)
     @ftp.close
     puts "XML base downloaded at #{file_path}"
