@@ -35,7 +35,8 @@ class PfFtp
 
   def get_files_list(repository)
     puts "Récupération de la liste des fichiers présent dans #{repository}..."
-    repo_path = ["csvs", repository].join("/")
+    ftp_root = Rails.env.development? ? "test/" : ""
+    repo_path = ["#{ftp_root}csvs", repository].join("/")
     @ftp.chdir(repo_path)
     files = @ftp.nlst()
     @ftp.close

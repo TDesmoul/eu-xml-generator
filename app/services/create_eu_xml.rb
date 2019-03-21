@@ -68,7 +68,7 @@ class CreateEuXml
     # self.write_xml(file_path, base)
 
     # on upload le fichier sur le FTP
-    PfFtp.new.upload_file("target_xmls", file_path)
+    PfFtp.new.upload_file("#{"test/" if Rails.env.development? }target_xmls", file_path)
   end
 
   def self.write_xml(file_path, xml_doc)
