@@ -9,8 +9,9 @@ class XmlIngredient::Retrieve
     file_path = Rails.root + "lib/xml_files/#{file_name}"
     xml_file = File.open(file_path)
     xml_doc = Nokogiri::XML(xml_file)
-    ingredient = xml_doc.xpath("//Ingredient//CasNumber[text()='#{cas_number}']").first.parent
-
+    unless xml_doc.xpath("//Ingredient//CasNumber[text()='#{cas_number}']").first.nil?
+      ingredient = xml_doc.xpath("//Ingredient//CasNumber[text()='#{cas_number}']").first.parent
+    end
     # on supprime le fichier téléchargé
     FileUtils.rm_rf(Dir.glob(file_path))
     ingredient

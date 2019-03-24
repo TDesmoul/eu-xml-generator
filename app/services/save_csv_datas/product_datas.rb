@@ -5,6 +5,7 @@ class SaveCsvDatas::ProductDatas < SaveCsvDatas::Elements
 
   def self.process_row(row)
     product = Product.find_by(ref: row["product_id"]) || Product.new
+    p product
     # product.submitter_file_name = row.delete("submitter_file_name")
     # product.manufacturer_file_name = row.delete("manufacturer_file_name")
     product.presentation_file_name = row.delete("presentation_file_name")
@@ -14,7 +15,7 @@ class SaveCsvDatas::ProductDatas < SaveCsvDatas::Elements
     product.nicotine_dose_uptake_file = row.delete("NicotineDoseUptakeFile")
     product.consistent_dosing_methods_file = row.delete("ConsistentDosingMethodsFile")
     product.datas = row.select{ |k,v| self.product_data?(k) }
-    product.save!
+    puts product.save!
     Presentation.create!(
       product: product,
       datas: row.select{ |k,v| self.presentation_data?(k) }
