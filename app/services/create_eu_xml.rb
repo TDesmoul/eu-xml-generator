@@ -39,10 +39,15 @@ class CreateEuXml
     self.write_xml(file_path, base)
 
     # on ajoute les ingredients
+    missing_ingredients = []
     product.ingredients.each do |ingredient|
       xml_ingredient = XmlIngredient::Retrieve.call(ingredient.file_name, ingredient.cas)
-      xml_ingredient.at("RecipeQuantity").content = ingredient.quantity
-      base.at("Ingredients").add_child(xml_ingredient)
+      if xml_ingredient
+        xml_ingredient.at("RecipeQuantity").content = ingredient.quantity
+        base.at("Ingredients").add_child(xml_ingredient)
+      else
+        missing_ingredients.push(ingredient.cas)
+      end
     end
     self.write_xml(file_path, base)
 
@@ -69,6 +74,7 @@ class CreateEuXml
 
     # on upload le fichier sur le FTP
     PfFtp.new.upload_file("#{"test/" if Rails.env.development? }target_xmls", file_path)
+    missing_ingredients
   end
 
   def self.write_xml(file_path, xml_doc)

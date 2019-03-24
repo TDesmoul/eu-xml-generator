@@ -3,8 +3,10 @@ class CreateXmlsJob < ApplicationJob
 
   def perform(*args)
     SaveCsvDatas::SaveAll.call
+    missing_cas = []
     Product.all.each do |product|
-      CreateEuXml.call(product)
+      missing_cas.push(CreateEuXml.call(product))
     end
+    puts "MISSING CAS => #{missing_cas.flatten.join(", ")}"
   end
 end
