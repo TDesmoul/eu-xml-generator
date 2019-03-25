@@ -21,7 +21,7 @@
       Compléter le fichier Excel <span class="t-i t-u bg-lg">datas_for_eu_xml.slsx</span> avec les valeurs particulères de chaque produit. 4 onglets sont à remplir.
     </li>
     <li>
-      Enregistrer les 4 onglets du fichier <span class="t-i t-u bg-lg">datas_for_eu_xml.slsx</span> dans des fichiers à part, au format CSV (dans la fenêtre 'enregistrer sous', choisir le format 'CSV (Windows) (séparateur: point-virgule)(.csv)'). Le nom des 4 fichiers CSV importe peu.
+      Enregistrer les 4 onglets du fichier <span class="t-i t-u bg-lg">datas_for_eu_xml.slsx</span> dans des fichiers à part, au format CSV avec un encodage UTF-8*. Le nom des 4 fichiers CSV importe peu.
     </li>
     <li>
       Uploader les 4 fichiers dans le répertoire idoine dans la partie <span class="bg-lg">csvs</span> du FTP : le nom des répertoires correspond aux noms des onglets du fichier Excel.
@@ -33,6 +33,15 @@
       Récupérer les fichiers XML générés par l'application dans le répertoire <span class="bg-lg">target_xmls</span> du FTP.
     </li>
   </ol>
+  <div id="utf8">
+    (*) Process à suivre pour générer des .csv encodés en UTF-8 (avec le logiciel <%= link_to "SublimeText", "https://www.sublimetext.com/3", target: "_blank" %>) :
+    <ol>
+      <li>dans Excel : enregistrer l'onglet au format CSV (MS-DOS semble le mieux)</li>
+      <li>ouvrir le fichier .csv avec SublimeText</li>
+      <li>supprimer les lignes vides à la fin du fichier</li>
+      <li>choisir File > Save with encoding > UTF-8</li>
+    </ol>
+  </div>
 </div>
 <h3 class="text-center">Le FTP</h3>
 <div>
