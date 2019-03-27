@@ -94,3 +94,13 @@ a, .c2a {
   max-width: 450px;
   margin: auto;
 }
+#missings-xmls {
+  max-width: 450px;
+  margin: 20px auto;
+  color: red;
+  border: 1px solid red;
+  padding: 10px;
+  > ul {
+    margin-bottom: 0;
+  }
+}
