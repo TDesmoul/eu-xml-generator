@@ -6,23 +6,10 @@
   <%= link_to "Lancer la création des XML", gogogo_path, class: "c2a" %>
 </div>
 <div class="text-center">
-  <%= link_to "Y-a-t'il une génération de fichier en cours?", job_in_progress_path %>
-  <% unless @job_in_progress.nil? %>
-    <span id="job-info">=> <%= @job_in_progress ? "oui" : "non" %></span>
-  <% end %>
+  <%= link_to "Y-a-t'il une génération de fichier en cours?", job_in_progress_path, remote: true %>
+  <span id="job-info">=> <%= @job_in_progress ? "oui" : "non" %></span>
 </div>
-<% if @missing_xmls %>
-  <div id="missings-xmls">
-    <% @missing_xmls.each do |missing_xml| %>
-      Les <%= missing_xml.xml_type %>s suivants, présent dans le csv, n'ont pas été trouvé dans les xml_sources :
-      <ul>
-        <% missing_xml.elements.each do |element| %>
-          <li><%= element %></li>
-        <% end %>
-      </ul>
-    <% end %>
-  </div>
-<% end %>
+<%= render "missing_xmls" if @missing_xmls %>
 <h2 class="text-center">Comment ça marche?</h2>
 <div>
   <ol>

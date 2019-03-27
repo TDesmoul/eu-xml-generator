@@ -1,0 +1,10 @@
+<div id="missings-xmls">
+  <% @missing_xmls.each do |missing_xml| %>
+    Les <%= missing_xml.xml_type %>s suivants, présent dans le csv, n'ont pas été trouvé dans les xml_sources :
+    <ul>
+      <% missing_xml.elements.each do |element| %>
+        <li><%= element %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
