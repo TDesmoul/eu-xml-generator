@@ -1,0 +1,2 @@
+class IngredientLocation < ApplicationRecord
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_190214) do
+ActiveRecord::Schema.define(version: 2019_03_27_161206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 2019_03_13_190214) do
     t.index ["product_id"], name: "index_designs_on_product_id"
   end
 
+  create_table "emission_locations", force: :cascade do |t|
+    t.string "cas"
+    t.string "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "emissions", force: :cascade do |t|
     t.string "cas"
     t.float "quantity"
@@ -40,6 +47,13 @@ ActiveRecord::Schema.define(version: 2019_03_13_190214) do
     t.string "file_name"
     t.string "product_identification"
     t.index ["product_id"], name: "index_emissions_on_product_id"
+  end
+
+  create_table "ingredient_locations", force: :cascade do |t|
+    t.string "cas"
+    t.string "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ingredients", force: :cascade do |t|
