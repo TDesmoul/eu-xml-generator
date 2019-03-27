@@ -127,3 +127,35 @@
     </ul>
   </p>
 </div>
+
+<% content_for :after_js do %>
+  <script>
+    <% if user_signed_in? %>
+      App['background_process'] = App.cable.subscriptions.create(
+        { channel: 'BackgroundProcessFeedbackChannel',
+          user: "<%= current_user.email %>"
+        },
+        {
+          received: (data) => {
+            // $(".alert-success").hide();
+            var alert = $(".alert-success")
+            cableMessage.html(data.message);
+            // cableMessage.removeClass("bg-yellow");
+            // cableMessage.addClass("bg-green");
+            // cableMessage.removeClass("hidden");
+            // cableMessage.css("display", "block");
+            // cableMessage.click(function(e) {
+            //   $(this).addClass("hidden");
+            //   $(this).css("display", "none");
+            // });
+            // setTimeout(function() { cableMessage.fadeOut('fast'); }, 10000);
+            // var processTypeID = "#" + data.process_type;
+            // var createdAt = new Date(data.created_at);
+            // $(processTypeID + " .runtime-date").html(runtimeDate(createdAt));
+            // $(processTypeID + " .runtime-hour").html(runtimeHour(createdAt));
+          }
+        }
+      );
+    <% end %>
+  </script>
+<% end %>
