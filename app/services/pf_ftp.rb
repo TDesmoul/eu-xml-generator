@@ -43,6 +43,22 @@ class PfFtp
     { repo: repo_path, list: files }
   end
 
+  def get_ingredients_files_list
+    puts "Récupération de la liste des fichiers présent dans source_xmls/ingredients"
+    @ftp.chdir("source_xmls/ingredients")
+    files = @ftp.nlst()
+    @ftp.close
+    files
+  end
+
+  def get_emissions_files_list
+    puts "Récupération de la liste des fichiers présent dans source_xmls/emissions"
+    @ftp.chdir("source_xmls/emissions")
+    files = @ftp.nlst()
+    @ftp.close
+    files
+  end
+
   # def download_tracking_infos_files(arg = {})
   #   puts "Récupération des fichiers de tracking depuis le FTP..."
   #   directory = "#{ENV['PF_FTP_DIR_TRACKING_SOURCE']}#{"/test" if arg[:dir] == "test"}"

@@ -1,0 +1,2 @@
+class EmissionLocation < ApplicationRecord
+end

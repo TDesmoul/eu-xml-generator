@@ -2,14 +2,16 @@
   <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "" %>
 </div>
 <h1 class="text-center">EU XML Notification Generator</h1>
-<div class="text-center">
-  <%= link_to "Lancer la création des XML", gogogo_path, class: "c2a" %>
+<div id="process_information" class="text-center"></div>
+<div id="missings-xmls" class="<%= "hidden" unless @missing_ingredient_cas || @missing_emission_cas %>">
+  <%= render "missing_xmls", missing_ingredients: @missing_ingredient_cas || [],
+    missing_emissions: @missing_emission_cas || [] %>
 </div>
 <div class="text-center">
-  <%= link_to "Y-a-t'il une génération de fichier en cours?", job_in_progress_path %>
-  <% unless @job_in_progress.nil? %>
-    <span id="job-info">=> <%= @job_in_progress ? "oui" : "non" %></span>
-  <% end %>
+  <%= link_to "Vérifier les ingredients et les emissions", check_datas_path, remote: true, class: "c2a" %>
+</div>
+<div class="text-center">
+  <%= link_to "Lancer la création des XML", gogogo_path, remote: true, class: "c2a" %>
 </div>
 <h2 class="text-center">Comment ça marche?</h2>
 <div>
@@ -128,3 +130,40 @@
     </ul>
   </p>
 </div>
+
+<% content_for :after_js do %>
+  <script>
+    console.log("hi form after_js");
+    App['background_process_feedback'] = App.cable.subscriptions.create(
+      { channel: 'BackgroundProcessFeedbackChannel' },
+      {
+        received: (data) => {
+          var processInfo = document.getElementById("process_information");
+          var missingXmlsContainer = document.getElementById("missings-xmls");
+          var missingIngredients = document.getElementById("missing-ingredients");
+          var missingEmissions = document.getElementById("missing-emissions");
+          processInfo.innerHTML = data.message;
+          if (data.missing_ingredients || data.missing_emissions) {
+            missingXmlsContainer.classList.remove("hidden");
+          } else {
+            missingXmlsContainer.classList.add("hidden");
+          }
+          if (data.missing_ingredients) {
+            html = ""
+            data.missing_ingredients.forEach((cas) => {
+              html += "<li>" + cas + "</li>";
+            })
+            missingIngredients.innerHTML = html;
+          }
+          if (data.missing_emissions) {
+            html = ""
+            data.missing_emissions.forEach((cas) => {
+              html += "<li>" + cas + "</li>";
+            })
+            missingEmissions.innerHTML = html;
+          }
+        }
+      }
+    );
+  </script>
+<% end %>
