@@ -9,7 +9,7 @@ class SaveCsvDatas::Ingredients < SaveCsvDatas::Elements
       product.ingredients.create(
         cas:       row["CasNumber"],
         quantity:  row["RecipeQuantity"],
-        file_name: IngredientLocation.find_by(cas: row["CasNumber"]).file,
+        file_name: IngredientLocation.find_by(cas: row["CasNumber"]) ? IngredientLocation.find_by(cas: row["CasNumber"]).file : "",
         datas:     row
       )
     end

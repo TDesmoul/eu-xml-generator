@@ -56,6 +56,10 @@ a {
   font-size: 1.5em;
   background: black;
   color: white;
+  &:focus, &:visited {
+    color: white;
+    outline: none;
+  }
 }
 a, .c2a {
   &:hover {
@@ -98,9 +102,12 @@ a, .c2a {
   max-width: 450px;
   margin: 20px auto;
   color: red;
-  border: 1px solid red;
+  border: 1px dashed red;
   padding: 10px;
   > ul {
     margin-bottom: 0;
   }
+}
+#process_information {
+  color: blue;
 }

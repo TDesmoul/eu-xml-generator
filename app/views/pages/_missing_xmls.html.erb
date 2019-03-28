@@ -1,10 +1,13 @@
-<div id="missings-xmls">
-  <% @missing_xmls.each do |missing_xml| %>
-    Les <%= missing_xml.xml_type %>s suivants, présent dans le csv, n'ont pas été trouvé dans les xml_sources :
-    <ul>
-      <% missing_xml.elements.each do |element| %>
-        <li><%= element %></li>
-      <% end %>
-    </ul>
+Les ingredients suivants, présents dans le csv, n'ont pas été trouvés dans les xml_sources :
+<ul id="missing-ingredients">
+  <% missing_ingredients.each do |cas| %>
+    <li><%= cas %></li>
   <% end %>
-</div>
+</ul>
+Les emissions suivants, présents dans le csv, n'ont pas été trouvés dans les xml_sources :
+<ul id="missing-emissions">
+  <% missing_emissions.each do |cas| %>
+    <li><%= cas %></li>
+  <% end %>
+</ul>
+

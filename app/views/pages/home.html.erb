@@ -2,14 +2,17 @@
   <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "" %>
 </div>
 <h1 class="text-center">EU XML Notification Generator</h1>
-<div class="text-center">
-  <%= link_to "Lancer la création des XML", gogogo_path, class: "c2a" %>
+<div id="process_information" class="text-center"></div>
+<div id="missings-xmls" class="<%= "hidden" unless @missing_ingredient_cas || @missing_emission_cas %>">
+  <%= render "missing_xmls", missing_ingredients: @missing_ingredient_cas || [],
+    missing_emissions: @missing_emission_cas || [] %>
 </div>
 <div class="text-center">
-  <%= link_to "Y-a-t'il une génération de fichier en cours?", job_in_progress_path, remote: true %>
-  <span id="job-info">=> <%= @job_in_progress ? "oui" : "non" %></span>
+  <%= link_to "Vérifier les ingredients et les emissions", check_datas_path, remote: true, class: "c2a" %>
 </div>
-<%= render "missing_xmls" if @missing_xmls %>
+<div class="text-center">
+  <%= link_to "Lancer la création des XML", gogogo_path, remote: true, class: "c2a" %>
+</div>
 <h2 class="text-center">Comment ça marche?</h2>
 <div>
   <ol>
@@ -130,32 +133,37 @@
 
 <% content_for :after_js do %>
   <script>
-    <% if user_signed_in? %>
-      App['background_process'] = App.cable.subscriptions.create(
-        { channel: 'BackgroundProcessFeedbackChannel',
-          user: "<%= current_user.email %>"
-        },
-        {
-          received: (data) => {
-            // $(".alert-success").hide();
-            var alert = $(".alert-success")
-            cableMessage.html(data.message);
-            // cableMessage.removeClass("bg-yellow");
-            // cableMessage.addClass("bg-green");
-            // cableMessage.removeClass("hidden");
-            // cableMessage.css("display", "block");
-            // cableMessage.click(function(e) {
-            //   $(this).addClass("hidden");
-            //   $(this).css("display", "none");
-            // });
-            // setTimeout(function() { cableMessage.fadeOut('fast'); }, 10000);
-            // var processTypeID = "#" + data.process_type;
-            // var createdAt = new Date(data.created_at);
-            // $(processTypeID + " .runtime-date").html(runtimeDate(createdAt));
-            // $(processTypeID + " .runtime-hour").html(runtimeHour(createdAt));
+    console.log("hi form after_js");
+    App['background_process_feedback'] = App.cable.subscriptions.create(
+      { channel: 'BackgroundProcessFeedbackChannel' },
+      {
+        received: (data) => {
+          var processInfo = document.getElementById("process_information");
+          var missingXmlsContainer = document.getElementById("missings-xmls");
+          var missingIngredients = document.getElementById("missing-ingredients");
+          var missingEmissions = document.getElementById("missing-emissions");
+          processInfo.innerHTML = data.message;
+          if (data.missing_ingredients || data.missing_emissions) {
+            missingXmlsContainer.classList.remove("hidden");
+          } else {
+            missingXmlsContainer.classList.add("hidden");
+          }
+          if (data.missing_ingredients) {
+            html = ""
+            data.missing_ingredients.forEach((cas) => {
+              html += "<li>" + cas + "</li>";
+            })
+            missingIngredients.innerHTML = html;
+          }
+          if (data.missing_emissions) {
+            html = ""
+            data.missing_emissions.forEach((cas) => {
+              html += "<li>" + cas + "</li>";
+            })
+            missingEmissions.innerHTML = html;
           }
         }
-      );
-    <% end %>
+      }
+    );
   </script>
 <% end %>
