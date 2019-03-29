@@ -12,5 +12,8 @@ class CheckIngredientsAndEmissionsJob < ApplicationJob
     missings[:missing_ingredients] = missing_ingredients.elements if missing_ingredients
     missings[:missing_emissions] = missing_emissions.elements if missing_emissions
     ApplicationJob.broadcast_to_background_process_feedback(message, missings)
+    rescue
+      message = "Une erreur est survenue: la vérification est suspendue."
+      ApplicationJob.broadcast_to_background_process_feedback(message)
   end
 end
