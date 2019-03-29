@@ -10,7 +10,7 @@ class SaveCsvDatas::Emissions < SaveCsvDatas::Elements
         cas:       row["CasNumber"],
         quantity:  row["Quantity"],
         product_identification: row["ProductIdentification"],
-        file_name: EmissionLocation.find_by(cas: row["CasNumber"]).file
+        file_name: EmissionLocation.find_by(cas: row["CasNumber"]) ? EmissionLocation.find_by(cas: row["CasNumber"]).file : ""
       )
     end
   end
