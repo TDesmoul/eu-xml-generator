@@ -20,6 +20,10 @@ class CheckDatasAndCreateXmlsJob < ApplicationJob
       message = "La génération des XML cibles est terminée."
       ApplicationJob.broadcast_to_background_process_feedback(message)
     end
+
+    rescue
+      message = "Une erreur est survenue: la génération est suspendue."
+      ApplicationJob.broadcast_to_background_process_feedback(message)
   end
 
 end
