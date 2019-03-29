@@ -95,16 +95,10 @@
         <span class="bg-lg">products_countries</span> => 1 ligne par produit, en précisant les codes pays en colonne (1 code pays par colonne). Cet onglet sert à générer un bloc <span class="bg-lg">Presentation</span> par pays.
       </li>
       <li>
-        <span class="bg-lg">products_ingredients</span> => 1 ligne par ingrédient et par produit.
-        <ul>
-          <li>La colonne <span class="bg-lg">Ingredients_file_name</span> contient le nom du fichier où récupérer le bloc XML <span class="bg-lg">Ingredient</span> correspondant au cas number (sur le FTP).</li>
-        </ul>
+        <span class="bg-lg">products_ingredients</span> => 1 ligne par ingrédient et par produit. Si un produit contient 10 ingrédients, cela fera donc 10 lignes.
       </li>
       <li>
         <span class="bg-lg">products_emissions</span> => 1 ligne par émission et par produit. Si un produit contient 10 émissions, cela fera donc 10 lignes.
-        <ul>
-          <li>La colonne <span class="bg-lg">Emissions_file_name</span> contient le nom du fichier où récupérer le bloc XML <span class="bg-lg">Emission</span> correspondant au cas number (sur le FTP).</li>
-        </ul>
       </li>
     </ul>
   </p>
@@ -125,8 +119,8 @@
     Ensuite, différents blocs <span class="bg-lg">Presentation, Ingredient & Emission</span> sont insérés :
     <ul>
       <li>le bloc <span class="bg-lg">Presentation</span> est récupéré à l'intérieur du dossier <span class="bg-lg">sources_xmls/presentations</span>, à l'intérieur du fichier mentionné au niveau de la colonne <span class="bg-lg">presentation_file_name</span> de l'onglet <span class="bg-lg">product_datas</span> du fichier <span class="t-i t-u bg-lg">datas_for_eu_xlsx</span>. Les balises XML <span class="bg-lg">LaunchDate, ProductNumber, Year</span> sont mises à jour en fonction des valeurs saisies dans les colonnes correspondantes de l'onglet <span class="bg-lg">product_datas</span>. Le bloc est ensuite dupliqué pour chaque pays enregistrés pour le produit dans l'onglet <span class="bg-lg">products_countries</span>, en modifiant à chaque duplication la valeur du <span class="bg-lg">NationalMarket</span>.</li>
-      <li>pour chaque ingredient du produit, le bloc <span class="bg-lg">Ingredient</span> correspondant au cas number est récupéré à l'intérieur du dossier <span class="bg-lg">sources_xmls/ingredients</span>, à l'intérieur du fichier mentionné au niveau de la colonne <span class="bg-lg">ingredients_file_name</span> de l'onglet <span class="bg-lg">product_ingredients</span> du fichier <span class="t-i t-u bg-lg">datas_for_eu_xml.xlsx</span>. Les balises XML correspondant aux colonnes de l'onglet <span class="bg-lg">product_ingredients</span> sont mises à jour en fonction des valeurs saisies dans l'Excel.</li>
-      <li>pour chaque emission du produit, le bloc <span class="bg-lg">Emission</span> correspondant au cas number est récupéré à l'intérieur du dossier <span class="bg-lg">sources_xmls/emissions</span>, à l'intérieur du fichier mentionné au niveau de la colonne <span class="bg-lg">emissions_file_name</span> de l'onglet <span class="bg-lg">product_emissions</span> du fichier <span class="t-i t-u bg-lg">datas_for_eu_xml.xlsx</span>. Les balises XML correspondant aux colonnes de l'onglet <span class="bg-lg">product_emissions</span> sont mises à jour en fonction des valeurs saisies dans l'Excel.</span></li>
+      <li>pour chaque ingredient du produit, le bloc <span class="bg-lg">Ingredient</span> correspondant au cas number est récupéré à l'intérieur du dossier <span class="bg-lg">sources_xmls/ingredients</span>. Les balises XML correspondant aux colonnes de l'onglet <span class="bg-lg">product_ingredients</span> du fichier <span class="t-i t-u bg-lg">datas_for_eu_xml.xlsx</span> sont mises à jour en fonction des valeurs saisies dans l'Excel.</li>
+      <li>pour chaque emission du produit, le bloc <span class="bg-lg">Emission</span> correspondant au cas number est récupéré à l'intérieur du dossier <span class="bg-lg">sources_xmls/emissions</span>. Les balises XML correspondant aux colonnes de l'onglet <span class="bg-lg">product_emissions</span> du fichier <span class="t-i t-u bg-lg">datas_for_eu_xml.xlsx</span> sont mises à jour en fonction des valeurs saisies dans l'Excel.</span></li>
     </ul>
   </p>
 </div>
