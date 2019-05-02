@@ -12,5 +12,6 @@ class CheckFilesForSalesUpdates
     else
       puts "Tous les fichiers sont là."
     end
+    { missing_on_ftp: missing_on_ftp, absent_in_csv: absent_in_csv }
   end
 end
