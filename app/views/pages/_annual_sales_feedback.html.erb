@@ -1,0 +1,32 @@
+<div id="missing_on_ftp" class="<%= "hidden" if feedback && feedback.missing_on_ftp.empty? %>">
+  Les file_ids suivants, présents dans le CSV, n'ont pas été trouvés sur le FTP :
+  <ul>
+    <% if feedback %>
+      <% feedback.missing_on_ftp.each do |file_id| %>
+        <li><%= file_id %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<div id="absent_in_csv" class="<%= "hidden" if feedback && feedback.absent_in_csv.empty? %>">
+  Les file_ids suivants, présents sur le FTP, n'ont pas été trouvés dans le CSV :
+  <ul>
+    <% if feedback %>
+      <% feedback.absent_in_csv.each do |file_id| %>
+        <li><%= file_id %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<div id="missing_countries" class="<%= "hidden" if feedback && feedback.missing_countries.empty? %>">
+  Les blocs 'Presentation' suivants n'ont pas été trouvés dans les fichiers source :
+  <ul>
+    <% if feedback %>
+      <% feedback.missing_countries.each do |file, countries| %>
+        <li><%= file %> : <%= countries.join(", ") %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<%= link_to "ok, supprimer le message", destroy_feedback_path, remote: true %>
+

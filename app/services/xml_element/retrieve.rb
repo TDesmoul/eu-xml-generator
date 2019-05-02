@@ -8,6 +8,7 @@ class XmlElement::Retrieve
     manufacturer: { repo: "manufacturers", tag: "Manufacturer", default_file: "lab-rome.xml" },
     presentation: { repo: "presentations", tag: "Presentation", default_file: "presentation-01.xml" },
     submitter: { repo: "submitters", tag: "Submitter", default_file: "submitter-01.xml" },
+    annual_sales: { repo: "sales_data", tag: "AnnualSalesData", default_file: "annual_sales_data.xml"},
     other: { repo: "others" }
   }
 

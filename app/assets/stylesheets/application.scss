@@ -98,7 +98,7 @@ a, .c2a {
   max-width: 450px;
   margin: auto;
 }
-#missings-xmls {
+#missings-xmls, #add-sales-feedback {
   max-width: 450px;
   margin: 20px auto;
   color: red;
@@ -107,6 +107,10 @@ a, .c2a {
   > ul {
     margin-bottom: 0;
   }
+}
+#add-sales-feedback a {
+  display: block;
+  text-align: center;
 }
 #process_information {
   color: blue;

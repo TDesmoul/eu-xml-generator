@@ -59,6 +59,14 @@ class PfFtp
     files
   end
 
+  def get_annual_sales_source_files_list
+    puts "Récupération de la liste des fichiers présent dans sales_updates/source_xmls"
+    @ftp.chdir("sales_updates/source_xmls")
+    files = @ftp.nlst()
+    @ftp.close
+    files
+  end
+
   # def download_tracking_infos_files(arg = {})
   #   puts "Récupération des fichiers de tracking depuis le FTP..."
   #   directory = "#{ENV['PF_FTP_DIR_TRACKING_SOURCE']}#{"/test" if arg[:dir] == "test"}"

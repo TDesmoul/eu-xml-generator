@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ECigProductFile>
+    <applicationVersion>1.2.3</applicationVersion>
+    <uuid>0237b3ed-e9f9-461d-8de1-d736fe0374a7</uuid>
+    <ecigProductSubmission>
+        <Submitter confidential="false" submitterID="00088">
+            <SubmitterType>MANUFACTURER</SubmitterType>
+            <HasParent>false</HasParent>
+            <Parent confidential="false"/>
+            <HasAffiliates>true</HasAffiliates>
+            <Affiliates>
+                <Affiliate confidential="false">
+                    <Name>Polyflame (Shanghai) Trading Co. Ltd.</Name>
+                    <Address>2669 Xie Tu Road Xuhui District, Shanghai</Address>
+                    <Country>CN</Country>
+                    <PhoneNumber>00862131336020</PhoneNumber>
+                    <Email>pa.paulicevich@cn.polyflame.com</Email>
+                </Affiliate>
+            </Affiliates>
+            <HasEnterer>false</HasEnterer>
+            <Enterer confidential="false"/>
+        </Submitter>
+        <SubmissionType confidential="true"/>
+        <GeneralComment confidential="true">
+
+5- Update of existing product information: 
+change subtype for the model according to BE requirement
+
+4- Remove presentation:
+Remove LV
+
+4- Remove presentation:
+Remove DK</GeneralComment>
+        <Product>
+            <ProductID confidential="true">00088-17-50011</ProductID>
+            <PreviousProductID confidential="false"></PreviousProductID>
+            <OtherProductsExist confidential="false">true</OtherProductsExist>
+            <OtherProducts>
+                <ProductIdentification type="PRODUCT_ID" confidential="false"></ProductIdentification>
+            </OtherProducts>
+            <SameCompositionProductsExist confidential="false">false</SameCompositionProductsExist>
+            <SameCompositionProducts>
+                <ProductIdentification confidential="false"></ProductIdentification>
+            </SameCompositionProducts>
+            <Manufacturers>
+                <Manufacturer confidential="false">
+                    <Name></Name>
+                    <Address></Address>
+                    <PhoneNumber></PhoneNumber>
+                    <Email></Email>
+                    <ProductionSiteAddresses/>
+                </Manufacturer>
+            </Manufacturers>
+            <MarketResearchFiles>
+                <Attachment/>
+            </MarketResearchFiles>
+            <ProductType confidential="true"/>
+            <Weight confidential="false">-1.0</Weight>
+            <Volume confidential="true">1.9</Volume>
+            <ClpClassification confidential="false"></ClpClassification>
+            <StudySummaryFiles>
+                <Attachment/>
+            </StudySummaryFiles>
+            <Presentations/>
+            <Ingredients/>
+            <Emissions>
+                <Emission>
+                    <CasNumber confidential="true">54-11-5</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">66.2</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">1</Name>
+                    <NameOther confidential="false"></NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">111-46-6</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">0.0</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">3</Name>
+                    <NameOther confidential="false"></NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">50-00-0</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">0.744</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">4</Name>
+                    <NameOther confidential="false"></NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">75-07-0</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">1.15</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">5</Name>
+                    <NameOther confidential="false"></NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">107-02-8</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">0.0</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">6</Name>
+                    <NameOther confidential="false"></NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">7440-47-3</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">0.0</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">11</Name>
+                    <NameOther confidential="false"></NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">7440-50-8</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">0.0</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">12</Name>
+                    <NameOther confidential="false"></NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">7439-92-1</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">0.0</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">13</Name>
+                    <NameOther confidential="false"></NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">7440-02-0</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">0.0</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">14</Name>
+                    <NameOther confidential="false"></NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">7429-90-5</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">0.0</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">22</Name>
+                    <NameOther confidential="false">Al</NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">7440-31-5</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">0.0</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">22</Name>
+                    <NameOther confidential="false">Sn</NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">431-03-8</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">0.0</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">20</Name>
+                    <NameOther confidential="false"></NameOther>
+                </Emission>
+                <Emission>
+                    <CasNumber confidential="true">600-14-6</CasNumber>
+                    <IupacName confidential="false"></IupacName>
+                    <Quantity confidential="true">0.0</Quantity>
+                    <Unit confidential="true">microgram/puff</Unit>
+                    <MethodsFile>
+                        <Attachment attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                    </MethodsFile>
+                    <AdditionalProducts>
+                        <ProductIdentification type="TEXT" confidential="true">AFNOR eliquid + Cubis Pro (Joyetech) 1,5ohm</ProductIdentification>
+                    </AdditionalProducts>
+                    <ProductCombination confidential="false"></ProductCombination>
+                    <Name confidential="true">21</Name>
+                    <NameOther confidential="false"></NameOther>
+                </Emission>
+            </Emissions>
+            <Design>
+                <Description confidential="false"></Description>
+                <IdentificationEcigDevice confidential="false"></IdentificationEcigDevice>
+                <LiquidVolumeCapacity confidential="false">-1.0</LiquidVolumeCapacity>
+                <NicotineConcentration confidential="false">-1.0</NicotineConcentration>
+                <BatteryType confidential="false"></BatteryType>
+                <BatteryCapacity confidential="false">-1.0</BatteryCapacity>
+                <VoltageWattageAdjustable confidential="false"/>
+                <Voltage confidential="false">-1.0</Voltage>
+                <VoltageLowerRange confidential="false">-1.0</VoltageLowerRange>
+                <VoltageUpperRange confidential="false">-1.0</VoltageUpperRange>
+                <Wattage confidential="false">-1.0</Wattage>
+                <WattageLowerRange confidential="false">-1.0</WattageLowerRange>
+                <WattageUpperRange confidential="false">-1.0</WattageUpperRange>
+                <AirflowAdjustable confidential="false">false</AirflowAdjustable>
+                <WickChangeable confidential="false">false</WickChangeable>
+                <Microprocessor confidential="false">false</Microprocessor>
+                <CoilComposition confidential="false"></CoilComposition>
+                <NicotineDoseUptakeFile attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                <ProductionFile attachmentID="fba79e27-aadd-45a4-8b5d-c29212447e84"/>
+                <ProductionConformity confidential="false">false</ProductionConformity>
+                <QualitySafety confidential="false">false</QualitySafety>
+                <OpeningRefillFile attachmentID="ac7e9163-b6fb-4a5c-a51a-6293af832abe"/>
+                <ChildTamperProof confidential="false">false</ChildTamperProof>
+                <HighPurity confidential="false">false</HighPurity>
+                <NonRisk confidential="false">false</NonRisk>
+                <ConsistentDosing confidential="false">false</ConsistentDosing>
+                <ConsistentDosingMethodsFile attachmentID="ad3c9ebc-57a0-4481-b2a1-bd4292e4c17d"/>
+                <LeafletFile/>
+                <CoilResistance confidential="false">-1.0</CoilResistance>
+            </Design>
+        </Product>
+    </ecigProductSubmission>
+    <Status>CREATED</Status>
+    <exportDate>2018-05-29T16:04:26.521+02:00</exportDate>
+    <sentDate>2017-06-09T16:39:10.947+08:00</sentDate>
+    <SubmitterHierarchyId>f2f82d8c-3ca2-4891-b9c6-ba6a5ca9a87b#0</SubmitterHierarchyId>
+    <referenceUuids>
+        <submitterFileUuid>f2f82d8c-3ca2-4891-b9c6-ba6a5ca9a87b</submitterFileUuid>
+    </referenceUuids>
+</ECigProductFile>

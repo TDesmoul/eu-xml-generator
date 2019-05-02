@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_27_163116) do
+ActiveRecord::Schema.define(version: 2019_05_02_085941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "annual_sales", force: :cascade do |t|
+    t.string "file_id"
+    t.integer "year"
+    t.string "country"
+    t.float "sales"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "annual_sales_update_feedbacks", force: :cascade do |t|
+    t.string "missing_on_ftp"
+    t.string "absent_in_csv"
+    t.string "missing_countries"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "countries", force: :cascade do |t|
     t.string "code"
