@@ -7,11 +7,17 @@
   <%= render "missing_xmls", missing_ingredients: @missing_ingredient_cas || [],
     missing_emissions: @missing_emission_cas || [] %>
 </div>
+<div id="add-sales-feedback" class="<%= "hidden" unless @feedback %>">
+  <%= render "annual_sales_feedback", feedback: @feedback %>
+</div>
 <div class="text-center">
   <%= link_to "Vérifier les ingredients et les emissions", check_datas_path, remote: true, class: "c2a" %>
 </div>
 <div class="text-center">
   <%= link_to "Lancer la création des XML", gogogo_path, remote: true, class: "c2a" %>
+</div>
+<div class="text-center">
+  <%= link_to "Lancer l'ajout des AnnualSalesDatas", add_annual_sales_path, remote: true, class: "c2a" %>
 </div>
 <h2 class="text-center">Comment ça marche?</h2>
 <div>
@@ -58,6 +64,10 @@
       <span class="pdd-left-40px d-ib">|- <span class="t-i"><span class="t-u">ingredients.csv</span><span class="comment"> => onglet 'products_ingredients' du fichier 'datas_for_eu_xml.xlsx', enregistré au format CSV (1)</span></span></span><br>
       <span class="pdd-left-20px">|- product_datas</span><br>
       <span class="pdd-left-40px d-ib">|- <span class="t-i"><span class="t-u">product_datas.csv</span><span class="comment"> => onglet 'products_datas' du fichier 'datas_for_eu_xml.xlsx', enregistré au format CSV (1)</span></span></span><br>
+      <span class="pdd-left-20px d-ib">|- sales_updates<span class="comment"> => contient le CSV contenant les données pour l'ajout des chiffres d'affaires annuels.</span></span><br>
+    |- sales_updates<span class="comment"> => section dédiée à l'ajout des chiffres d'affaires annuels.</span><br>
+      <span class="pdd-left-20px d-ib">|- source_xmls<span class="comment"> => ici sont téléchargés les fichiers XML d'origine, auxquels on souhaite rajouter des AnnualSalesDatas</span></span><br>
+      <span class="pdd-left-20px d-ib">|- updated_xmls<span class="comment"> => ici sont récupérés les fichiers dans lesquels les AnnualSalesDatas ont été ajoutés</span></span><br>
     |- sources_xmls<span class="comment"> => c'est ici que sont téléchargés les blocs XML de base, où ils sont récupérés, modifiés et agencés pour constituer les fichiers cibles.</span><br>
       <span class="pdd-left-20px">|- emissions</span><br>
       <span class="pdd-left-40px d-ib">|- <span class="t-i"><span class="t-u">emissions_01.xml</span><span class="comment"> => 'banque' de blocs XML 'Emission' : 1 bloc par cas number, le fichier peut contenir autant de blocs que vous le souhaitez.</span></span></span><br>
@@ -65,6 +75,8 @@
       <span class="pdd-left-40px d-ib">|- <span class="t-i"><span class="t-u">ingredients_01.xml</span><span class="comment"> => 'banque' de blocs XML 'Ingredient' : 1 bloc par cas number, le fichier peut contenir autant de blocs que vous le souhaitez.</span></span></span><br>
       <span class="pdd-left-20px">|- presentations</span><br>
       <span class="pdd-left-40px d-ib">|- <span class="t-i"><span class="t-u">presentation-01.xml</span><span class="comment"> => bloc XML 'Presentation' : 1 seul bloc dans le fichier</span></span></span><br>
+      <span class="pdd-left-20px">|- sales_data</span><br>
+      <span class="pdd-left-40px d-ib">|- <span class="t-i"><span class="t-u">annual_sales_data.xml</span><span class="comment"> => bloc XML 'AnnualSalesData' : 1 seul bloc dans le fichier</span></span></span><br>
       <span class="pdd-left-20px">|- <span class="t-i t-u">base.xml</span><span class="t-i comment"> => fichier XML servant de base à la création des XMLs pour chaque produit</span></span><br>
     |- target_xmls<span class="t-i comment"> => c'est ici que sont enregistrés les fichiers XML cibles générés par l'application (1 fichier par produit).</span></span><br>
     |- <span class="t-i"><span class="t-u">datas_for_eu_xml.xlsx</span><span class="comment"> => fichier Excel permettant de saisir les valeurs particulières des produits</datas_for_eu_xml></span>
@@ -132,10 +144,15 @@
       { channel: 'BackgroundProcessFeedbackChannel' },
       {
         received: (data) => {
+          console.log(data);
           var processInfo = document.getElementById("process_information");
           var missingXmlsContainer = document.getElementById("missings-xmls");
           var missingIngredients = document.getElementById("missing-ingredients");
           var missingEmissions = document.getElementById("missing-emissions");
+          var annualSalesFeedback = document.getElementById("add-sales-feedback");
+          var missingOnFTP = document.getElementById("missing_on_ftp");
+          var absentInCsv = document.getElementById("absent_in_csv");
+          var missingCountries = document.getElementById("missing_countries");
           processInfo.innerHTML = data.message;
           if (data.missing_ingredients || data.missing_emissions) {
             missingXmlsContainer.classList.remove("hidden");
@@ -143,18 +160,53 @@
             missingXmlsContainer.classList.add("hidden");
           }
           if (data.missing_ingredients) {
-            html = ""
+            html = "";
             data.missing_ingredients.forEach((cas) => {
               html += "<li>" + cas + "</li>";
             })
             missingIngredients.innerHTML = html;
           }
           if (data.missing_emissions) {
-            html = ""
+            html = "";
             data.missing_emissions.forEach((cas) => {
               html += "<li>" + cas + "</li>";
             })
             missingEmissions.innerHTML = html;
+          }
+          if (data.missing_on_ftp || data.absent_in_csv || data.missing_countries) {
+            annualSalesFeedback.classList.remove("hidden")
+          }
+          // console.log(data.missing_on_ftp);
+          // console.log(data.missing_on_ftp === undefined || data.missing_on_ftp.length == 0);
+          if (data.missing_on_ftp === undefined || data.missing_on_ftp.length == 0) {
+            missingOnFTP.classList.add("hidden");
+          } else {
+            missingOnFTP.classList.remove("hidden");
+            html = "";
+            data.missing_on_ftp.forEach((fileId) => {
+              html += "<li>" + fileId + "</li>";
+            })
+            missingOnFTP.querySelector("ul").innerHTML = html;
+          }
+          if (data.absent_in_csv === undefined || data.absent_in_csv.length == 0) {
+            absentInCsv.classList.add("hidden");
+          } else {
+            absentInCsv.classList.remove("hidden");
+            html = "";
+            data.absent_in_csv.forEach((fileId) => {
+              html += "<li>" + fileId + "</li>";
+            })
+            absentInCsv.querySelector("ul").innerHTML = html;
+          }
+          if (Object.keys(data.missing_countries).length === 0 && data.missing_countries.constructor === Object) {
+            missingCountries.classList.add("hidden");
+          } else {
+            missingCountries.classList.remove("hidden");
+            html = "";
+            Object.keys(data.missing_countries).forEach( (fileId) => {
+              html += "<li>" + fileId + " : " + data.missing_countries[fileId].join(", ") + "</li>";
+            })
+            missingCountries.querySelector("ul").innerHTML = html;
           }
         }
       }
