@@ -25,6 +25,18 @@ class UpdateXmlWithSales
         presentation.at("AnnualSalesDataList").add_child(annual_sales_xml)
       end
     end
+    sales_year = AnnualSale.where(file_id: file_id).last.year
+    # On complète les présentations pour lesquelles on a pas d'AnnualSale
+    # en ajoutant un bloc AnnualSalesData avec un CA à 0
+    xml_doc.root.css("Presentation").each do |presentation|
+      include_2018 = presentation.css("AnnualSalesData Year").map{ |year| year.text.strip.include?("2018")}.include?(true)
+      unless include_2018
+        annual_sales_xml = annual_sales_xml_base.clone
+        annual_sales_xml.at("Year").content = "2018+00:00"
+        annual_sales_xml.at("SalesVolume").content = "0"
+        presentation.at("AnnualSalesDataList").add_child(annual_sales_xml)
+      end
+    end
     # on enregistre le fichier
     self.write_xml(file_path, xml_doc)
     # on upload le fichier sur le FTP
