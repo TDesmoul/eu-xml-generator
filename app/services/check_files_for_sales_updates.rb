@@ -1,8 +1,10 @@
 class CheckFilesForSalesUpdates
   def self.call
-    csv_files_ids = AnnualSale.pluck(:file_id).uniq.map{ |file_id| file_id + ".xml" }
+    # on récupère la liste des xmls sauvegardés dans les AnnualSales
+    csv_files_ids = AnnualSale.xml_files_list_with_extension
+    # on récupère la liste des xmls présents dans sales_updates/source_xmls (FTP)
     ftp_files_ids = PfFtp.new.get_annual_sales_source_files_list
-    { csv: csv_files_ids, ftp: ftp_files_ids }
+    # { csv: csv_files_ids, ftp: ftp_files_ids }
     missing_on_ftp = csv_files_ids - ftp_files_ids
     absent_in_csv = ftp_files_ids - csv_files_ids
     if missing_on_ftp.present?
