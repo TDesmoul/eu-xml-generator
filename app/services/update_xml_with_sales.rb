@@ -28,6 +28,7 @@ class UpdateXmlWithSales
     sales_year = AnnualSale.where(file_id: file_id).last.year
     # On complète les présentations pour lesquelles on a pas d'AnnualSale
     # en ajoutant un bloc AnnualSalesData avec un CA à 0
+    puts "On créé les blocs AnnualSalesData pour les pays pour lesquels on a pas de données sur #{sales_year}..."
     xml_doc.root.css("Presentation").each do |presentation|
       include_2018 = presentation.css("AnnualSalesData Year").map{ |year| year.text.strip.include?("2018")}.include?(true)
       unless include_2018
@@ -37,6 +38,7 @@ class UpdateXmlWithSales
         presentation.at("AnnualSalesDataList").add_child(annual_sales_xml)
       end
     end
+    puts "Tous les blocs AnnualSalesData ont été créés et ajoutés!"
     # on enregistre le fichier
     self.write_xml(file_path, xml_doc)
     # on upload le fichier sur le FTP
@@ -44,6 +46,8 @@ class UpdateXmlWithSales
     # on supprime le fichier local
     FileUtils.rm_rf(Dir.glob(file_path))
     return missing_countries
+  rescue
+    ["Problème sur ce fichier : #{file_id}.xml..."]
   end
 
   def self.write_xml(file_path, xml_doc)
