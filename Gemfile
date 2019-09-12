@@ -39,7 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem "figaro"
-gem "devise"
+gem "devise", '~> 4.7.1'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
