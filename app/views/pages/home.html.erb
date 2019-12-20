@@ -19,11 +19,8 @@
 <div class="text-center">
   <%= link_to "Lancer l'ajout des AnnualSalesDatas", add_annual_sales_path, remote: true, class: "c2a" %>
 </div>
-<div class="text-center">
-  <%= simple_form_for :country_codes, url: add_countries_path do |f| %>
-    <%= f.input :codes, label: "Lister les codes pays des pays à ajouter (séparés par des virgules) :", placeholder: "FR,DE,ES,IT" %>
-    <%= f.submit "Lancer l'ajout des pays", class: "c2a" %>
-  <% end %>
+<div class="text-center" id="add_countries_container">
+  <%= render 'pages/add_countries_form' %>
 </div>
 <h2 class="text-center">Comment ça marche?</h2>
 <div>
@@ -145,12 +142,10 @@
 
 <% content_for :after_js do %>
   <script>
-    console.log("hi form after_js");
     App['background_process_feedback'] = App.cable.subscriptions.create(
       { channel: 'BackgroundProcessFeedbackChannel' },
       {
         received: (data) => {
-          console.log(data);
           var processInfo = document.getElementById("process_information");
           var missingXmlsContainer = document.getElementById("missings-xmls");
           var missingIngredients = document.getElementById("missing-ingredients");
@@ -184,35 +179,41 @@
           }
           // console.log(data.missing_on_ftp);
           // console.log(data.missing_on_ftp === undefined || data.missing_on_ftp.length == 0);
-          if (data.missing_on_ftp === undefined || data.missing_on_ftp.length == 0) {
-            missingOnFTP.classList.add("hidden");
-          } else {
-            missingOnFTP.classList.remove("hidden");
-            html = "";
-            data.missing_on_ftp.forEach((fileId) => {
-              html += "<li>" + fileId + "</li>";
-            })
-            missingOnFTP.querySelector("ul").innerHTML = html;
+          if (data.missing_on_ftp) {
+            if (data.missing_on_ftp === undefined || data.missing_on_ftp.length == 0) {
+              missingOnFTP.classList.add("hidden");
+            } else {
+              missingOnFTP.classList.remove("hidden");
+              html = "";
+              data.missing_on_ftp.forEach((fileId) => {
+                html += "<li>" + fileId + "</li>";
+              })
+              missingOnFTP.querySelector("ul").innerHTML = html;
+            }
           }
-          if (data.absent_in_csv === undefined || data.absent_in_csv.length == 0) {
-            absentInCsv.classList.add("hidden");
-          } else {
-            absentInCsv.classList.remove("hidden");
-            html = "";
-            data.absent_in_csv.forEach((fileId) => {
-              html += "<li>" + fileId + "</li>";
-            })
-            absentInCsv.querySelector("ul").innerHTML = html;
+          if (data.absent_in_csv) {
+            if (data.absent_in_csv === undefined || data.absent_in_csv.length == 0) {
+              absentInCsv.classList.add("hidden");
+            } else {
+              absentInCsv.classList.remove("hidden");
+              html = "";
+              data.absent_in_csv.forEach((fileId) => {
+                html += "<li>" + fileId + "</li>";
+              })
+              absentInCsv.querySelector("ul").innerHTML = html;
+            }
           }
-          if (Object.keys(data.missing_countries).length === 0 && data.missing_countries.constructor === Object) {
-            missingCountries.classList.add("hidden");
-          } else {
-            missingCountries.classList.remove("hidden");
-            html = "";
-            Object.keys(data.missing_countries).forEach( (fileId) => {
-              html += "<li>" + fileId + " : " + data.missing_countries[fileId].join(", ") + "</li>";
-            })
-            missingCountries.querySelector("ul").innerHTML = html;
+          if (data.missing_countries) {
+            if (Object.keys(data.missing_countries).length === 0 && data.missing_countries.constructor === Object) {
+              missingCountries.classList.add("hidden");
+            } else {
+              missingCountries.classList.remove("hidden");
+              html = "";
+              Object.keys(data.missing_countries).forEach( (fileId) => {
+                html += "<li>" + fileId + " : " + data.missing_countries[fileId].join(", ") + "</li>";
+              })
+              missingCountries.querySelector("ul").innerHTML = html;
+            }
           }
         }
       }

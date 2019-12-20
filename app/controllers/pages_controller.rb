@@ -35,7 +35,14 @@ class PagesController < ApplicationController
     end
   end
   def add_countries
-    raise
+    codes = params[:country_codes][:codes].upcase.gsub(/\s/, "").split(",")
+    AddCountriesToXmlsJob.perform_later(countries: codes)
+    respond_to do |format|
+      format.html do
+        redirect_to root_path
+      end
+      format.js
+    end
   end
   def destroy_feedback
     AnnualSalesUpdateFeedback.destroy_all

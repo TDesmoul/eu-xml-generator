@@ -1,0 +1,4 @@
+<%= simple_form_for :country_codes, url: add_countries_path, remote: true do |f| %>
+  <%= f.input :codes, label: "Lister les codes pays des pays à ajouter (séparés par des virgules) :", placeholder: "FR,DE,ES,IT" %>
+  <%= f.submit "Lancer l'ajout des pays", class: "c2a" %>
+<% end %>
