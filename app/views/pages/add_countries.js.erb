@@ -1,0 +1,6 @@
+function refreshPage(){
+  const addCountriesCont = document.getElementById("add_countries_container");
+  addCountriesCont.innerHTML = "<%= j render 'pages/add_countries_form' %>"
+}
+
+refreshPage();
