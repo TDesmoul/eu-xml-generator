@@ -34,6 +34,9 @@ class PagesController < ApplicationController
       format.js
     end
   end
+  def add_countries
+    raise
+  end
   def destroy_feedback
     AnnualSalesUpdateFeedback.destroy_all
     respond_to do |format|

@@ -11,8 +11,8 @@ class AddAnnualSalesDatasJob < ApplicationJob
     feedback_message[:absent_in_csv] = feedback.absent_in_csv
     feedback_message[:missing_countries] = feedback.missing_countries
     ApplicationJob.broadcast_to_background_process_feedback(message, feedback_message)
-    rescue
-      message = "Une erreur est survenue: la vérification est suspendue."
-      ApplicationJob.broadcast_to_background_process_feedback(message)
+  rescue
+    message = "Une erreur est survenue: la vérification est suspendue."
+    ApplicationJob.broadcast_to_background_process_feedback(message)
   end
 end

@@ -115,3 +115,11 @@ a, .c2a {
 #process_information {
   color: blue;
 }
+.form-group.country_codes_codes {
+  margin-top: 15px;
+  margin-bottom: 0;
+  input {
+    max-width: 600px;
+    margin: auto;
+  }
+}

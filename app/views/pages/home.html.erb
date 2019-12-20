@@ -19,6 +19,12 @@
 <div class="text-center">
   <%= link_to "Lancer l'ajout des AnnualSalesDatas", add_annual_sales_path, remote: true, class: "c2a" %>
 </div>
+<div class="text-center">
+  <%= simple_form_for :country_codes, url: add_countries_path do |f| %>
+    <%= f.input :codes, label: "Lister les codes pays des pays à ajouter (séparés par des virgules) :", placeholder: "FR,DE,ES,IT" %>
+    <%= f.submit "Lancer l'ajout des pays", class: "c2a" %>
+  <% end %>
+</div>
 <h2 class="text-center">Comment ça marche?</h2>
 <div>
   <ol>
