@@ -62,11 +62,11 @@ class PfFtp
   end
 
   def get_annual_sales_source_files_list
-    get_files_list("sales_updates/source_xmls")
+    get_files_list_pvt("sales_updates/source_xmls")
   end
 
   def get_add_countries_source_files_list
-    get_files_list("add_countries/source_xmls")
+    get_files_list_pvt("add_countries/source_xmls")
   end
 
   # def get_target_xmls_list
@@ -75,13 +75,13 @@ class PfFtp
 
   private
 
-  # def get_files_list(directory_path)
-  #   puts "Récupération de la liste des fichiers présent dans #{directory_path}"
-  #   @ftp.chdir(directory_path)
-  #   files = @ftp.nlst()
-  #   @ftp.close
-  #   files
-  # end
+  def get_files_list_pvt(directory_path)
+    puts "Récupération de la liste des fichiers présent dans #{directory_path}"
+    @ftp.chdir(directory_path)
+    files = @ftp.nlst()
+    @ftp.close
+    files
+  end
 
 
   # def download_tracking_infos_files(arg = {})
