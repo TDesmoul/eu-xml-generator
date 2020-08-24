@@ -35,8 +35,10 @@ class PfFtp
 
   def get_files_list(repository)
     puts "Récupération de la liste des fichiers présent dans #{repository}..."
+    # ftp_root = Rails.env.development? && repository != "source_xmls" ? "test/" : ""
     ftp_root = Rails.env.development? ? "test/" : ""
     repo_path = ["#{ftp_root}csvs", repository].join("/")
+    puts "repo_path => #{repo_path}"
     @ftp.chdir(repo_path)
     files = @ftp.nlst()
     @ftp.close
@@ -73,13 +75,13 @@ class PfFtp
 
   private
 
-  def get_files_list(directory_path)
-    puts "Récupération de la liste des fichiers présent dans #{directory_path}"
-    @ftp.chdir(directory_path)
-    files = @ftp.nlst()
-    @ftp.close
-    files
-  end
+  # def get_files_list(directory_path)
+  #   puts "Récupération de la liste des fichiers présent dans #{directory_path}"
+  #   @ftp.chdir(directory_path)
+  #   files = @ftp.nlst()
+  #   @ftp.close
+  #   files
+  # end
 
 
   # def download_tracking_infos_files(arg = {})
